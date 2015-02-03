@@ -1,30 +1,29 @@
-# RTorrent User Guide #
+# rTorrent User Guide #
 
-General note about key combinations: ^ means the Ctrl-key. `M-x` means Meta-x (Usually Alt-x or Esc-x)
+General note about key combinations: ^ means the Ctrl-key. `M-x` means Meta-x (Usually Alt-x or Esc-x).
 
 ## Adding and removing torrents ##
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
-| backspace | Add torrent using an URL or file path. Use tab to view directory content and do auto-complete. Also, wildcards can be used. For example: ~/torrent/* |
+| backspace | Add torrent using an URL or file path. Use tab to view directory content and do auto-complete. Also, wildcards can be used. For example: `~/torrent/*` |
 | return | Same as backspace, except the torrent remains inactive. (Use ^s to activate) |
 | ^o | Set new download directory for selected torrent. Only works if torrent has not yet been activated. |
 | ^s | Start download. Runs hash first unless already done. |
 | ^d | Stop an active download, or remove a stopped download. |
 | ^k | Stop and close the files of an active download. | 
-| ^r | Initiate hash check of torrent. Without starting to download/upload. |
 
 Note that ^s (and ^q for quit) is often used for terminal control to pause screen output (and ^q to resume). This may interfere with rTorrent. Type `stty -a` to see whether these have been mapped. To remove the mappings, execute the commands
 ```
 stty stop undef
 stty start undef
 ```
-before running rTorrent (or reattaching to screen) to leave them undefined. You could also replace `undef` with some other code -- ^p, say. ^d also usually sends end-of-file but ncurses passes this through to rTorrent. `stty eof undef` if you are worried.
+before running rTorrent (or reattaching to screen) to leave them undefined. You could also replace `undef` with some other code like ^p. ^d also usually sends end-of-file but ncurses passes this through to rTorrent, `stty eof undef` if you are worried.
 
 To fix this, you may also toggle the flow control in screen with ^a ^f until screen displays "-flow" in the bottom left corner.
 
 ## Throttling ##
 
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
 | a/s/d | Increase the upload throttle by 1/5/50 KB. | 
 | z/x/c | Decrease the upload throttle by 1/5/50 KB. | 
@@ -44,7 +43,7 @@ This message is caused by a corrupted or otherwise non-valid .torrent file. You 
 
 ### Global Keys ###
 
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
 | ^q | Initiate shutdown, press again to force the shutdown and skip sending the stop signal to trackers. | 
 | up/down | Select item. | 
@@ -52,10 +51,10 @@ This message is caused by a corrupted or otherwise non-valid .torrent file. You 
 
 ### Main View Keys ###
 
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
 | right |  Switch to Download View. | 
-| ^r | Initiate hash check of torrent. | 
+| ^r | Initiate hash check of torrent. Without starting to download/upload. | 
 | +/- | Change priority of torrent. | 
 | l | View log. Exit by pressing the space-bar. | 
 | 1 | Show all downloads | 
@@ -69,7 +68,7 @@ This message is caused by a corrupted or otherwise non-valid .torrent file. You 
 
 ### Download View Keys ###
 
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
 | right | Switch to selected view | 
 | left | Switch to view selection or back to main view | 
@@ -80,21 +79,21 @@ This message is caused by a corrupted or otherwise non-valid .torrent file. You 
 | o | Display torrent info | 
 | i | Display file list | 
 | u | Display tracker list | 
-| t/T | Initiate tracker request. Use capital T to force the request, ignoring the "min interval" set by the tracker. | 
+| t/T | Initiate tracker request. Use capital "T" to force the request, ignoring the "min interval" set by the tracker. | 
 
 ### Peer list View Keys ###
 
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
 | left | Switch to view selection | 
 | right | Show peer details | 
 | * | Snub peer (stop uploading to this peer) | 
 | k | Kick peer (disconnect from peer) | 
-| B | Ban peer (No unbanning is possible.) 0.8.4+ | 
+| B | Ban peer (No unbanning is possible. Requires rTorrent 0.8.4+) | 
 
 ### File list View Keys ###
 
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
 | left | Switch to view selection | 
 | right | Show file details | 
@@ -102,11 +101,11 @@ This message is caused by a corrupted or otherwise non-valid .torrent file. You 
 | * | Change the priority of all files | 
 | / | Collapse directories. While collapsed, press right to expand the selected directory. | 
 
-Priority options are blank (standard priority), hig (high priority) and off (not to be downloaded).
+Priority options are _blank_ (standard priority), `hig` (high priority) and `off` (not to be downloaded).
 
 ### Tracker list View Keys ###
 
-|||
+| Shortcut | Description |
 | ------------- | ------------- |
 | left | Switch to view selection | 
 | * | Enable/disable tracker | 
@@ -236,8 +235,9 @@ RE = Remote client information, has two parts; the first is u or c and the secon
 &nbsp;&nbsp;&nbsp;&nbsp;c = This peer has choked your client (which means it is not going to send you any pieces for now).  
 &nbsp;&nbsp;&nbsp;&nbsp;u = Your client is not choked by this peer (unchoked).  
 &nbsp;&nbsp;&nbsp;&nbsp;i = This peer is interested in downloading from your client.  
-&nbsp;&nbsp;&nbsp;&nbsp;n = This peer is not interested in downloading from your client.  
-&nbsp;&nbsp;&nbsp;&nbsp;LO = Local client information, has two parts; the first is u or c and the second is i or n.  
+&nbsp;&nbsp;&nbsp;&nbsp;n = This peer is not interested in downloading from your client. 
+
+LO = Local client information, has two parts; the first is u or c and the second is i or n.  
 &nbsp;&nbsp;&nbsp;&nbsp;c = Your client has choked this peer (which means it is not going to send this peer any pieces for now).  
 &nbsp;&nbsp;&nbsp;&nbsp;u = Your client is not choking the peer (unchoked).  
 &nbsp;&nbsp;&nbsp;&nbsp;i = Your client is interested in downloading from this peer.  
@@ -332,7 +332,7 @@ The client may spend as much as 60 seconds trying to contact a UDP tracker, so i
 
 ### Signal handlers ###
 
-|||
+| Signal | Description |
 | ------------- | ------------- |
 |  SIGINT  |  Normal shutdown with 5 seconds to send the stopped request to trackers.  | 
 |  SIGTERM  |  Shut down immediately.  | 
