@@ -39,6 +39,9 @@ This message is caused by bad communication with the tracker, often caused by in
 **Could not create download, the input is not a valid torrent**<br>
 This message is caused by a corrupted or otherwise non-valid .torrent file. You should redownload the .torrent file or possibly find a new source for it.
 
+**Download registered as completed, but hash check returned unfinished chunks.**<br>
+This message is caused by deleting/modifying the downloaded file after a torrent is marked as complete. You could set the 'create/resize queued' flags on all files of the torrent by pressing ^e in main view.
+
 ## Navigating ##
 
 ### Global Keys ###
@@ -54,6 +57,7 @@ This message is caused by a corrupted or otherwise non-valid .torrent file. You 
 | Shortcut | Description |
 | ------------- | ------------- |
 | right |  Switch to Download View. | 
+| ^e | Set  the 'create/resize queued' flags on all files in a torrent. This is necessary if the underlying files in a torrent have been deleted or truncated, and thus rtorrent must recreate them. |
 | ^r | Initiate hash check of torrent. Without starting to download/upload. | 
 | +/- | Change priority of torrent. | 
 | l | View log. Exit by pressing the space-bar. | 
