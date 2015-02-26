@@ -12,6 +12,9 @@ You must have set a session directory to use DHT:
 ## The default is `off`. For DHT to work, a session directory must be defined.
 dht = auto
 
+## Default session directory. Make sure you don't run multiple instance of rtorrent using the same session directory.
+session = ~/.rtorrent.session
+
 ## UDP port to use for DHT.
 dht_port = 6881
 ....
