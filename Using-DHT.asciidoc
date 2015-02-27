@@ -90,5 +90,5 @@ Note that this causes all DHT packets to have a state of `UNTRACKED`, keep that 
 == Tips & Tricks
 
 == Troubleshooting
-=== UFW/iptables blocking inconcent packets when DHT enabled
+=== UFW/iptables blocking innocent packets when DHT enabled
 See http://www.linuxquestions.org/questions/linux-networking-3/why-is-ufw-iptables-blocking-packets-it-shouldn%27t-be-4175500239/
