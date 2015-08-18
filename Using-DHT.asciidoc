@@ -78,11 +78,11 @@ There are several strategies to mitigate this:
 2.  Reduce the DHT query volume. Since one cannot directly control incoming queries, this can be done by throttling the outgoing DHT bandwidth to discourage too many incoming queries.
 3.  Turn off connection tracking for DHT packets.
 
-To turn off DHT connection tracking on Linux, use the NOTRACK target in the "raw" netfilter table. For instance, when using UDP port 6881 for DHT, execute these iptables commands:
+To turn off DHT connection tracking on Linux, use the CT target's --notrack option in the "raw" netfilter table. For instance, when using UDP port 6881 for DHT, execute these iptables commands:
 
 ....
-iptables -t raw -I PREROUTING -p udp --dport 6881 -j NOTRACK
-iptables -t raw -I OUTPUT -p udp --sport 6881 -j NOTRACK
+iptables -t raw -I PREROUTING -p udp --dport 6881 -j CT --notrack
+iptables -t raw -I OUTPUT -p udp --sport 6881 -j CT --notrack
 ....
 
 Note that this causes all DHT packets to have a state of `UNTRACKED`, keep that in mind if you have any state-based rules in the regular netfilter tables. Similarly, ICMP packets received in reply to untracked outgoing DHT packets (for instance `Host Unreachable` or `Time Exceeded`) will have a state of `INVALID` because they do not belong to any known connection.
