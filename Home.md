@@ -7,5 +7,5 @@ RTorrent and LibTorrent Wiki
 Download
 --------
 
-* http://libtorrent.rakshasa.no/downloads/libtorrent-0.13.6.tar.gz
-* http://libtorrent.rakshasa.no/downloads/rtorrent-0.9.6.tar.gz
+* http://rtorrent.net/downloads/libtorrent-0.13.6.tar.gz
+* http://rtorrent.net/downloads/rtorrent-0.9.6.tar.gz
