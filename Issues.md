@@ -7,3 +7,4 @@ Also, if the files are bigger than 4GB, data gets corrupted.[2]
 
 1. http://askubuntu.com/questions/399775/constant-freezes-when-downloading-torrent-to-ntfs-partition
 2. https://bbs.archlinux.org/viewtopic.php?id=192811
+3. https://github.com/rakshasa/rtorrent/issues/194
