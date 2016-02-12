@@ -1,26 +1,38 @@
-Using XMLRPC with rTorrent
-==========================
+# Using XMLRPC with rTorrent
 
 What you need:
---------------
 
 * http://python.ca/scgi/ for Apache, Lighttpd should have this built-in.
 * http://xmlrpc-c.sourceforge.net/ 1.00 or later, 1.07 or later for 64bit integer support.
 
-Configure rtorrent with the --with-xmlrpc-c flag and add the following to:
+Configure rtorrent with the `--with-xmlrpc-c` flag. Then add appropriate configuration, according used web-server.
 
+### Apache
+
+**httpd.conf**:
+```ini
+SCGIMount /RPC2 127.0.0.1:5000
 ```
-httpd.conf:  SCGIMount /RPC2 127.0.0.1:5000
-rtorrent.rc: scgi_port = localhost:5000
+
+**rtorrent.rc**:
+```ini
+scgi_port = localhost:5000
 ```
 
-For lighttpd:
--------------
+### Lighttpd:
 
+**rtorrent.rc**:
+```ini
+scgi_local = /home/user/rtorrent/rpc.socket
+
+# Set correct access rights to the socket file ----------+
+# so both, lighttpd and rtorrent, could perform          |
+# read-write operations                                  v
+schedule = scgi_permission,0,0,"execute.nothrow=chmod,\"g+w,o=\",/home/user/rtorrent/rpc.socket"
 ```
-rtorrent.rc: scgi_local = /home/user/rtorrent/rpc.socket
 
-lighttpd.conf:
+**lighttpd.conf**:
+```ini
 server.modules += ( "mod_scgi" )
 scgi.server = (
                 "/RPC2" =>
@@ -34,9 +46,14 @@ scgi.server = (
               )
 ```
 
-For nginx:
-----------
+### Nginx:
 
+**rtorrent.rc**:
+```ini
+scgi_port = localhost:5000
+```
+
+**nginx.conf**:
 ```
 location /RPC2 {
   scgi_pass   127.0.0.1:5000;
@@ -44,6 +61,8 @@ location /RPC2 {
   scgi_var    SCRIPT_NAME  /RPC2;
 }
 ```
+
+## Other notes
 
 If any of your downloads have non-ascii characters in the filenames, you must also set the following in rtorrent.rc to force rtorrent to use the UTF-8 encoding. The XMLRPC standard requires UTF-8 replies, and rtorrent presently has no facilities to convert between encodings so it might generate invalid replies otherwise.
 
@@ -53,12 +72,11 @@ encoding_list = UTF-8
 
 The web server will now route xmlrpc requests to rtorrent, which is listening only on connections from the local machine or on the local socket file. Also make sure the /RPC2 location is properly protected.
 
-To make it accessible from anywhere, use "scgi_port = :5000". This is however not recommend as rtorrent has no access control, which means the http server is responsible for handling that. Anyone who can send rtorrent xmlrpc commands is likely to have the ability to execute code with the privileges of the user running rtorrent.
+To make it accessible from anywhere, use `scgi_port = :5000`. This is however not recommend as rtorrent has no access control, which means the http server is responsible for handling that. Anyone who can send rtorrent xmlrpc commands is likely to have the ability to execute code with the privileges of the user running rtorrent.
 
-You may also use "scgi_local = /foo/bar" to create a local domain socket, which supports file permissions. Set the rw permissions of the directory the socket will reside in to only allow the necessary processes. This is the recommended way of using XMLRPC with rtorrent, though not all http servers support local domain sockets for scgi.
+You may also use `scgi_local = /foo/bar` to create a local domain socket, which supports file permissions. Set the rw permissions of the directory the socket will reside in to only allow the necessary processes. This is the recommended way of using XMLRPC with rtorrent, though not all http servers support local domain sockets for scgi.
 
-Usage
------
+## Test and usage
 
 Access the XMLRPC interface using any XMLRPC-capable client. For example, using the xmlrpc utility that comes with xmlrpc-c:
 
@@ -95,8 +113,7 @@ It supports both single strings akin to what the option file accepts, and proper
 
 See the man page and the rtorrent/src/command_* source files for more details on what parameters some of the commands take.
 
-Targets
--------
+## Targets
 
 Note that all commands now require a target, even if it is an empty string.
 
