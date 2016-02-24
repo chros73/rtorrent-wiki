@@ -61,6 +61,24 @@ location /RPC2 {
   scgi_var    SCRIPT_NAME  /RPC2;
 }
 ```
+or (on ubuntu server 14.04)
+```
+http {
+  server {
+    listen 0.0.0.0:8008;
+    server_name ngnix-rtorrent;
+    access_log /var/log/nginx/rtorrent.access_log;
+    error_log /var/log/nginx/rtorrent.error_log;
+
+    location /RPC2 {
+      scgi_pass   127.0.0.1:5000;
+      include     scgi_params;
+    }
+  }
+}
+```
+
+Do not forget, that on http://localhost:8008/RPC2 you will not see anything (through in rtorrent.error_log you will see something as `upstream prematurely closed connection while reading response header from upstream, client: 192.168.93.104, server: ngnix-rtorrent, request: "GET /RPC2 HTTP/1.1", upstream: "scgi://127.0.0.1:5000", host: "192.168.93.242:8008"`. It is xmlrpc, not web service. You can test it by xmlrpc (see later))
 
 ## Other notes
 
