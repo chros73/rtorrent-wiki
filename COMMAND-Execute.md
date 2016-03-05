@@ -21,7 +21,7 @@ execute_capture_nothrow={command,arg1,arg2,...}
 ```
 This will execute the external command with arguments arg1,arg2,.... It will return the stdout output of the command.
 
-## Smell Tricks
+## Small Tricks
 
 ### Get rtorrent to create a pid-file
 ```
