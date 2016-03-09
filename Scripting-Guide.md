@@ -1,5 +1,11 @@
 # rTorrent Scripting Explained
 
+:warning: | This guide is still very incomplete — the best way to remedy that is to contribute what you know.
+---: | :---
+
+You can use the quite powerful GitHub search to find information on commands, e.g. their old vs. new syntax variants, what they actually do (i.e. “read the source”), and internal uses in predefined methods, handlers, and schedules. 
+Consider the [view.add](https://github.com/rakshasa/rtorrent/search?utf8=%E2%9C%93&q=%22view.add%22) example.
+
  * [Sending commands with XMLRPC2SCGI](https://github.com/rakshasa/rtorrent/wiki/RPC-Utility-XMLRPC2SCGI)
  * Auto-generated list of [options](https://github.com/rakshasa/rtorrent/wiki/RPC-Option-Strings) used with some commands.
 
