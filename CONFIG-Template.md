@@ -11,11 +11,15 @@ use-cases in the appropriate sections of the wiki like the
 [Configuration Guide](https://github.com/rakshasa/rtorrent/wiki/Config-Guide).
 
 ```ini
+#############################################################################
 # A minimal rTorrent configuration that provides the basic features
 # you want to have in addition to the built-in defaults.
 #
+# See https://github.com/rakshasa/rtorrent/wiki/CONFIG-Template
+# for an up-to-date version.
+#############################################################################
 
-# BIG TODO
+# *** BIG TODO ***
 
 # Limits for file handle resources, this is optimized for
 # an `ulimit` of 1024 (a common default). You MUST leave
