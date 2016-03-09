@@ -1,6 +1,34 @@
 # rTorrent User Guide #
 
-General note about key combinations: ^ means the Ctrl-key. `M-x` means Meta-x (Usually Alt-x or Esc-x).
+:information_source: | General note about key combinations: ^ means the Ctrl-key. `M-x` means Meta-x (Usually Alt-x or Esc-x).
+---: | :----
+
+**Contents**
+
+* [Adding and removing torrents](#adding-and-removing-torrents)
+* [Throttling](#throttling)
+* [Common Error Messages](#common-error-messages)
+* [Navigating](#navigating)
+  * [Global Keys](#global-keys)
+  * [Main View Keys](#main-view-keys)
+  * [Download View Keys](#download-view-keys)
+  * [Peer list View Keys](#peer-list-view-keys)
+  * [File list View Keys](#file-list-view-keys)
+  * [Tracker list View Keys](#tracker-list-view-keys)
+* [Main view window.](#main-view-window)
+  * [Torrent info line explanation](#torrent-info-line-explanation)
+* [Bottom line in GUI shows current info about a lot of things.](#bottom-line-in-gui-shows-current-info-about-a-lot-of-things)
+  * [Bottom line explanation](#bottom-line-explanation)
+* [The Peers screen](#the-peers-screen)
+  * [Explanation](#explanation)
+  * [Status](#status)
+* [The Chunks seen screen](#the-chunks-seen-screen)
+* [Session directory](#session-directory)
+* [Watching a directory for torrents](#watching-a-directory-for-torrents)
+* [Other Miscellaneous Information](#other-miscellaneous-information)
+  * [Manually setting the local IP](#manually-setting-the-local-ip)
+  * [Signal handlers](#signal-handlers)
+
 
 ## Adding and removing torrents ##
 | Shortcut | Description |
