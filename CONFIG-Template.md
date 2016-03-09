@@ -21,6 +21,22 @@ use-cases in the appropriate sections of the wiki, like the
 
 # *** BIG TODO ***
 
+# Listening port for incoming peer traffic (fixed; you can also randomize it)
+network.port_range.set = 50000-50000
+network.port_random.set = no
+
+# Tracker-less torrent and UDP tracker support
+# (conservative settings for 'private' trackers, change for 'public')
+dht.mode.set = disable
+protocol.pex.set = no
+trackers.use_udp.set = no
+
+# Peer settings
+throttle.min_peers.normal.set = 20
+throttle.max_peers.normal.set = 60
+throttle.min_peers.seed.set = 30
+throttle.max_peers.seed.set = 80
+
 # Limits for file handle resources, this is optimized for
 # an `ulimit` of 1024 (a common default). You MUST leave
 # a ceiling of handles reserved for rTorrent's internal needs!
@@ -28,7 +44,8 @@ network.http.max_open.set = 50
 network.max_open_files.set = 600
 network.max_open_sockets.set = 300
 
-# Memory resource usage (increase if you have a large number of items loaded)
+# Memory resource usage (increase if you have a large number of items loaded,
+# and/or the available resources to spend)
 pieces.memory.max.set = 1800M
 network.xmlrpc.size_limit.set = 2M
 
