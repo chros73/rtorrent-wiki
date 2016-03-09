@@ -10,3 +10,4 @@ Command | Short Description
 ---: | :---
 [execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute) | Call operating system commands, possibly catching their output for use within rTorrent.
 [schedule](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling) | Repeatedly execute commands, either in a given frequency, or at certain times.
+[system.*](https://github.com/rakshasa/rtorrent/wiki/COMMAND-System) | Commands related to the operating system and the XMLRPC API.
