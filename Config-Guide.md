@@ -4,6 +4,9 @@
 
 **TODO**
 
+See [rTorrent Configuration Template](https://github.com/rakshasa/rtorrent/wiki/CONFIG-Template) for a modern rTorrent configuration that provides a good starting point.
+
+
 ## Advanced Use-Cases
 
  * [Watch Directories](https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories)
