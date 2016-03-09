@@ -1,4 +1,10 @@
 # rTorrent Configuration Guide
+**Contents**
+
+ * [Basic Configuration](#basic-configuration)
+ * [Advanced Use-Cases](#advanced-use-cases)
+ * [Advanced Topics](#advanced-topics)
+
 
 ## Basic Configuration 
 
