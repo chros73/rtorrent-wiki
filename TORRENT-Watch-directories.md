@@ -34,7 +34,7 @@ The reverse happens if 'start_tied' is called.
 Inotify
 -------
 
-On Linux and using v0.9.7+, you may use inotify to watch a directory, and the provided command is called with the the full path of new files as the first argument. Use `method.insert` to define more complex multi-command inotify handlers.
+On Linux and using v0.9.7+, you may use inotify to watch a directory, and the provided command is called with the the full path of new files as the first argument. Use `method.insert` to define more complex multi-command inotify handlers, or when you want to pass additional parameters to a handler command.
 
 ```ini
 directory.watch.added = "~/Download/watch/", load.start
