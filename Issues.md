@@ -1,3 +1,7 @@
+# Known Issues
+
+## Using the 'ntfs' File System
+
 `rtorrent` has issues with **ntfs** partitions.
 It's reported that `rtorrent` freezes when downloading on partition formatted with ntfs filesystem.[1]
 
