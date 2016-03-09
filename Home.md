@@ -1,5 +1,9 @@
 # RTorrent and LibTorrent Wiki
 
+:busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink:
+---: | :---
+
+
 ## User's Manual
  * the [User Guide](https://github.com/rakshasa/rtorrent/wiki/User-Guide) explains how to use the ‘curses’ UI, and what the displayed information actually means.
  * the [Configuration Guide](https://github.com/rakshasa/rtorrent/wiki/Config-Guide) helps you to adapt rTorrent to serve your needs.
