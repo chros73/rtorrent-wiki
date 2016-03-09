@@ -7,7 +7,7 @@ It uses `0.9.x` syntax, so be sure to run snippets you add through
 the migration script. Be considerate in what you add, this is supposed
 to help new users to jump-start their installation, so keep things
 out that are not applicable to a wide range of people. Place advanced
-use-cases in the appropriate sections of the wiki like the
+use-cases in the appropriate sections of the wiki, like the
 [Configuration Guide](https://github.com/rakshasa/rtorrent/wiki/Config-Guide).
 
 ```ini
@@ -28,6 +28,9 @@ network.http.max_open.set = 50
 network.max_open_files.set = 600
 network.max_open_sockets.set = 300
 
+# Memory resource usage (increase if you have a large number of items loaded)
+pieces.memory.max.set = 1800M
+network.xmlrpc.size_limit.set = 2M
 
 ### END of rtorrent.rc ###
 ```
