@@ -1,3 +1,5 @@
+# rTorrent Ratio Handling
+
 The ratio handling has been updated in rtorrent 0.8.4. Page originally from https://web.archive.org/web/20140219224509/http://libtorrent.rakshasa.no/wiki/RTorrentRatioHandling
 
 # Quick setup
