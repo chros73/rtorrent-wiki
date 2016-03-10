@@ -28,7 +28,7 @@ Use this command to get a copy of the template to your disk:
 
 ```sh
 curl -s https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template.md \
-    | grep -A9999 '^######' | grep -B9999 '^### END' >~/rtorrent/rtorrent.rc
+    | grep -A9999 '^######' | grep -B9999 '^### END' >~/.rtorrent.rc
 ```
 
 ## The Template
