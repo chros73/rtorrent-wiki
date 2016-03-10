@@ -21,6 +21,11 @@ use-cases in the appropriate sections of the wiki, like the
 
 # *** BIG TODO ***
 
+# Instance layout (base paths)
+method.insert = cfg.basedir,    private|const|string, (cat,"/home/USERNAME/rtorrent/")
+method.insert = cfg.logs,       private|const|string, (cat,(cfg.basedir),"log/")
+method.insert = cfg.logfile,    private|const|string, (cat,(cfg.logs),"rtorrent-",(system.time),".log")
+
 # Listening port for incoming peer traffic (fixed; you can also randomize it)
 network.port_range.set = 50000-50000
 network.port_random.set = no
@@ -48,6 +53,17 @@ network.max_open_sockets.set = 300
 # and/or the available resources to spend)
 pieces.memory.max.set = 1800M
 network.xmlrpc.size_limit.set = 2M
+
+# Basic operational settings (no need to change these)
+session.path.set = (cat,(cfg.basedir),".session")
+
+# Logging:
+#   Levels = critical error warn notice info debug
+#   Groups = connection_* dht_* peer_* rpc_* storage_* thread_* tracker_* torrent_*
+print = (cat,"Logging to ",(cfg.logfile))
+log.open_file = "log", (cfg.logfile)
+log.add_output = "info", "log"
+#log.add_output = "tracker_debug", "log"
 
 ### END of rtorrent.rc ###
 ```
