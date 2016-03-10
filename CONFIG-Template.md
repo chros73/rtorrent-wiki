@@ -1,5 +1,7 @@
 # rTorrent Configuration Template
 
+## Overview
+
 This page contains a modern rTorrent configuration that provides a good starting point.
 Its expressed purpose is to replace that years-old rotting piece of garbage that people still use to create their first configuration. Friends don't let friends use that!
 
@@ -10,6 +12,9 @@ out that are not applicable to a wide range of people. Place advanced
 use-cases in the appropriate sections of the wiki, like the
 [Configuration Guide](https://github.com/rakshasa/rtorrent/wiki/Config-Guide).
 
+
+## Using the Template
+
 To create the directory tree this configuration expects, use these commands:
 
 ```sh
@@ -18,6 +23,15 @@ mkdir -p "$basedir"/{.session,download,log,watch/load,watch/start}
 ```
 
 The `basedir` value has to be the same you set in `cfg.basedir` below.
+
+Use this command to get a copy of the template to your disk:
+
+```sh
+curl -s https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template.md \
+    | grep -A9999 '^######' | grep -B9999 '^### END' >~/rtorrent/rtorrent.rc
+```
+
+## The Template
 
 ```ini
 #############################################################################
