@@ -1,7 +1,7 @@
 # RTorrent and LibTorrent Wiki
 
 [![Travis CI](https://api.travis-ci.org/rakshasa/rtorrent.png?branch=master)](https://travis-ci.org/rakshasa/rtorrent)
-[![Download](http://img.shields.io/badge/download-v0.9.6-0000ff.svg)](https://github.com/rakshasa/rtorrent/wiki#stable-version-download-links)
+[![Download](http://img.shields.io/badge/download-v0.9.6-0000ff.svg)](https://github.com/rakshasa/rtorrent/wiki#download-links)
 
 :busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink: The [TODO](https://github.com/rakshasa/rtorrent/wiki/TODO) page has a list of pending work items.
 ---: | :---
@@ -18,7 +18,11 @@
  * List of [Known Issues](https://github.com/rakshasa/rtorrent/wiki/Issues)
 
 
-## Stable Version Download Links
+## Download Links
 
-* http://rtorrent.net/downloads/libtorrent-0.13.6.tar.gz
-* http://rtorrent.net/downloads/rtorrent-0.9.6.tar.gz
+**Stable Version**
+
+ * http://rtorrent.net/downloads/libtorrent-0.13.6.tar.gz
+ * http://rtorrent.net/downloads/rtorrent-0.9.6.tar.gz
+
+**[All Versions](http://rtorrent.net/downloads/)**
