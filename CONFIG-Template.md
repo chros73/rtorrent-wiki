@@ -32,6 +32,7 @@ The `basedir` value has to be the same you set in `cfg.basedir` below.
 
 # Instance layout (base paths)
 method.insert = cfg.basedir,    private|const|string, (cat,"/home/USERNAME/rtorrent/")
+method.insert = cfg.watch,      private|const|string, (cat,(cfg.basedir),"watch/")
 method.insert = cfg.logs,       private|const|string, (cat,(cfg.basedir),"log/")
 method.insert = cfg.logfile,    private|const|string, (cat,(cfg.logs),"rtorrent-",(system.time),".log")
 
@@ -66,6 +67,10 @@ network.xmlrpc.size_limit.set = 2M
 # Basic operational settings (no need to change these)
 session.path.set = (cat,(cfg.basedir),".session")
 directory.default.set = (cat,(cfg.basedir),"download")
+
+# Watch directories (add more as you like, but use unique schedule names)
+schedule = watch_start,10,10,((load.start,(cat,(cfg.watch),"start/*.torrent")))
+schedule = watch_load,15,10,((load.normal,(cat,(cfg.watch),"load/*.torrent")))
 
 # Logging:
 #   Levels = critical error warn notice info debug
