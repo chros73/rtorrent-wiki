@@ -1,5 +1,7 @@
 # RTorrent and LibTorrent Wiki
 
+[![Travis CI](https://api.travis-ci.org/rakshasa/rtorrent.png?branch=master)](https://api.travis-ci.org/rakshasa/rtorrent)
+
 :busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink: The [TODO](https://github.com/rakshasa/rtorrent/wiki/TODO) page has a list of pending work items.
 ---: | :---
 
