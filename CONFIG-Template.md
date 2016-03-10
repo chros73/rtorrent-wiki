@@ -10,6 +10,15 @@ out that are not applicable to a wide range of people. Place advanced
 use-cases in the appropriate sections of the wiki, like the
 [Configuration Guide](https://github.com/rakshasa/rtorrent/wiki/Config-Guide).
 
+To create the directory tree this configuration expects, use these commands:
+
+```sh
+basedir="$HOME/rtorrent"
+mkdir -p "$basedir"/{.session,download,log,watch/load,watch/start}
+```
+
+The `basedir` value has to be the same you set in `cfg.basedir` below.
+
 ```ini
 #############################################################################
 # A minimal rTorrent configuration that provides the basic features
@@ -56,6 +65,7 @@ network.xmlrpc.size_limit.set = 2M
 
 # Basic operational settings (no need to change these)
 session.path.set = (cat,(cfg.basedir),".session")
+directory.default.set = (cat,(cfg.basedir),"download")
 
 # Logging:
 #   Levels = critical error warn notice info debug
