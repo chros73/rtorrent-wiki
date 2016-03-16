@@ -23,9 +23,7 @@
   * [Explanation](#explanation)
   * [Status](#status)
 * [The Chunks seen screen](#the-chunks-seen-screen)
-* [Other Miscellaneous Information](#other-miscellaneous-information)
-  * [Manually setting the local IP](#manually-setting-the-local-ip)
-  * [Signal handlers](#signal-handlers)
+* [Signal handlers](#signal-handlers)
 
 
 ## Adding and removing torrents ##
