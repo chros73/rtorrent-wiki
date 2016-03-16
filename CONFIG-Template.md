@@ -33,6 +33,9 @@ curl -s https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template
 
 ## The Template
 
+:construction: | This is NOT complete yet!
+---: | :---
+
 ```ini
 #############################################################################
 # A minimal rTorrent configuration that provides the basic features
@@ -41,8 +44,6 @@ curl -s https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template
 # See https://github.com/rakshasa/rtorrent/wiki/CONFIG-Template
 # for an up-to-date version.
 #############################################################################
-
-# *** BIG TODO ***
 
 # Instance layout (base paths)
 method.insert = cfg.basedir,    private|const|string, (cat,"/home/USERNAME/rtorrent/")
