@@ -23,8 +23,6 @@
   * [Explanation](#explanation)
   * [Status](#status)
 * [The Chunks seen screen](#the-chunks-seen-screen)
-* [Session directory](#session-directory)
-* [Watching a directory for torrents](#watching-a-directory-for-torrents)
 * [Other Miscellaneous Information](#other-miscellaneous-information)
   * [Manually setting the local IP](#manually-setting-the-local-ip)
   * [Signal handlers](#signal-handlers)
@@ -338,31 +336,7 @@ Each chunk is shown by a hexadecimal number (0123456789ABCDEF) which is equal to
 If the chunk is in **bold** it means you do not have that chunk yet, if it is <u>underlined</u> then it is in the transfer list (i.e. queued to be downloaded), and if the chunk is in reverse colors, it is currently being downloaded. Otherwise, a normal font indicates that the chunk has already been downloaded and verified as correct by rTorrent.
 
 
-## Session directory ##
-
-Setting the *session* option will enable session management and the torrent files for all open downloads will be stored in this directory. When restarting rtorrent all torrents previously open will be restored. Only one instance of rtorrent should be used with each session directory, though at the moment no locking is done. An empty string will disable the session directory.
-
-
-## Watching a directory for torrents ##
-
-The client may be configured to check a directory for new torrents and load them. Torrents loaded in this manner will be ''tied'' to the filename and when the file is deleted the torrent may be stopped or removed. If a torrent which is tied to a file is removed from the client, the tied file will be deleted.
-
-```
-schedule = watch_directory,5,5,load_start=./watch/*.torrent
-schedule = untied_directory,5,5,stop_untied=
-```
-
-## Other Miscellaneous Information ##
-
-**Notice: This information might not be up to date.**
-
-### Manually setting the local IP ###
-
-Using the ''-i <ip>'' flag or ''"ip = <ip>"'' option you may change your ip address that is reported to the tracker. If you have a dynamic ip address then ''"schedule = ip_tick,0,1800,ip=my_address"'' may be used to update the ip address every 30 minutes.
-
-The client may spend as much as 60 seconds trying to contact a UDP tracker, so if you are behind a firewall that blocks the reply packets you should tell the client to skip the UDP tracker. Set "use_udp_trackers = no" in your configuration file or in the command line option.
-
-### Signal handlers ###
+## Signal handlers ##
 
 | Signal | Description |
 | ------------- | ------------- |
