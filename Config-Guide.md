@@ -25,13 +25,22 @@ schedule = watch_start,10,10,((load.start,"./watch/start/*.torrent"))
 schedule = watch_load,15,10,((load.normal,"./watch/load/*.torrent"))
 ```
 
+See also the [Watch Directories](https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories) page.
+
 
 ## Advanced Use-Cases
 
- * [Watch Directories](https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories)
+These pages and the following sections cover information that you don't need when you start out (i.e. read at your leisure), or only apply to a small number of users.
+
  * [Ratio Handling](https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling)
  * [Using DHT](https://github.com/rakshasa/rtorrent/wiki/Using-DHT)
  * [Using XMLRPC with rTorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
+
+### Manually setting the local IP ###
+
+Using the ''-i <ip>'' flag or ''"ip = <ip>"'' option you may change your ip address that is reported to the tracker. If you have a dynamic ip address then ''"schedule = ip_tick,0,1800,ip=my_address"'' may be used to update the ip address every 30 minutes.
+
+The client may spend as much as 60 seconds trying to contact a UDP tracker, so if you are behind a firewall that blocks the reply packets you should tell the client to skip the UDP tracker. Set "use_udp_trackers = no" in your configuration file or in the command line option.
 
 
 ## Advanced Topics
