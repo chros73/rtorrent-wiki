@@ -309,6 +309,29 @@ A = Peers accounted
 **Failed**  
 Number of failed chunks.
 
+## The Tracker list screen ##
+
+<pre><code> Trackers: [Key: zxcvbnma] [req          ]
+0: http://tracker.publicbt.com:80/announce
+    Id:  Counters: 0f / 1s (0)  on S/L/D: 114/42/0 (0/50)
+1: udp://tracker.openbittorrent.com:80/announce
+    Id: 2527549 Counters: 0f / 705s (18)  on S/L/D: 30/1/285 (2/15)</code></pre>
+
+Displays the available trackers for a torrent with their announce URL and different properties.
+
+**Possible values in the header**
+req = requesting
+prom = promiscuous mode
+fail = failure mode
+
+**Properties of a tracker**
+Properties from left to right, using the second (1) tracker as an example:
+Id: 2527549 = id (can be empty)
+Counters: 0f / 705s (18) = failed / successful (scrape) counters
+on = status , [on|off|err] , on -> usable , off -> disabled , err -> error
+S/L/D: 30/1/285 = number of seeders/leechers/downloads reported by the tracker during a scrape request
+(2/15) = number of new peers received last request / total number of peers received
+
 ## The Chunks seen screen ##
 
 <pre><code> Chunks seen: [C/A/D 25/29/6.99]     X downloaded  <strong>X</strong> missing  <strong><u>X</u></strong> queued  <span style="background-color: black; color: white">X</span> downloading
