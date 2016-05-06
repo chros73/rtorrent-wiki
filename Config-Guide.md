@@ -33,6 +33,7 @@ See also the [Watch Directories](https://github.com/rakshasa/rtorrent/wiki/TORRE
 These pages and the following sections cover information that you don't need when you start out (i.e. read at your leisure), or only apply to a small number of users.
 
  * [Ratio Handling](https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling)
+ * [Tor Proxying](https://github.com/rakshasa/rtorrent/wiki/CONFIG-Proxy-Guide)
  * [Using DHT](https://github.com/rakshasa/rtorrent/wiki/Using-DHT)
  * [Using XMLRPC with rTorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
 
