@@ -18,3 +18,22 @@ Command | Short Description
 [schedule](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling) | Repeatedly execute commands, either in a given frequency, or at certain times.
 [system.*](https://github.com/rakshasa/rtorrent/wiki/COMMAND-System) | Commands related to the operating system and the XMLRPC API.
 [ui.*](https://github.com/rakshasa/rtorrent/wiki/COMMAND-UserInterface) | These commands control aspects of the ‘curses’ UI.
+
+
+## Variable types
+
+This is a summary about the possible variable types in [command_dynamic.cc](https://github.com/rakshasa/rtorrent/blob/master/src/command_dynamic.cc) (applies to v0.9.6).
+
+ * private , const
+
+ * multi
+
+   * allowed subtypes: static , private , const , rlookup
+
+ * simple
+
+   * allowed subtypes: static , private , const
+
+ * value , bool , string , list
+
+   * allowed subtypes: static , private , const
