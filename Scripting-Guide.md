@@ -24,16 +24,11 @@ Command | Short Description
 
 This is a summary about the possible variable types in [command_dynamic.cc](https://github.com/rakshasa/rtorrent/blob/master/src/command_dynamic.cc) (applies to v0.9.6).
 
- * private , const
+Available types:
 
- * multi
-
-   * allowed subtypes: static , private , const , rlookup
-
- * simple
-
-   * allowed subtypes: static , private , const
-
- * value , bool , string , list
-
-   * allowed subtypes: static , private , const
+ * multi (with subtypes: static, private, const, rlookup)
+   * TODO: what is it
+ * simple (with subtypes: static, private, const)
+   * TODO: why is it "simple"
+ * value, bool, string, list (with subtypes: static, private, const)
+   * Standard types, "value" is an integer.
