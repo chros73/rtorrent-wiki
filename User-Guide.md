@@ -86,6 +86,8 @@ This message is caused by deleting/modifying the downloaded file after a torrent
 | ^r | Initiate hash check of torrent. Without starting to download/upload. | 
 | +/- | Change priority of torrent. | 
 | l | View log. Exit by pressing the space-bar. | 
+| I | Toggle whether torrent ignores or heeds commands. | 
+| U | Clear tied to file association for torrent. | 
 | 1 | Show all downloads | 
 | 2 | Show all downloads, ordered by name | 
 | 3 | Show started downloads | 
@@ -94,6 +96,8 @@ This message is caused by deleting/modifying the downloaded file after a torrent
 | 6 | Show incomplete downloads | 
 | 7 | Show hashing downloads | 
 | 8 | Show seeding downloads | 
+| 9 | Show leeching downloads | 
+| 0 | Show active downloads | 
 
 ### Download View Keys ###
 
