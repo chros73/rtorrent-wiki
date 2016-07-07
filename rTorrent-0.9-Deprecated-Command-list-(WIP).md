@@ -2,9 +2,15 @@
 #### Their use is highly discouraged, as they will become obsolete and are subject to removal at any time after that.
 
 
+### Misc
 | Deprecated Command | Replacement |
 | ------------------ | ----------- |
 | encoding_list | encoding.add |
+| key_layout | keys.layout.set |
+
+### Execution
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | execute | execute2 |
 | execute_nothrow | execute.nothrow |
 | execute_throw | execute.throw |
@@ -12,12 +18,23 @@
 | execute_raw_nothrow | execute.raw_nothrow |
 | execute_capture | execute.capture |
 | execute_capture_nothrow | execute.capture_nothrow |
-| key_layout | keys.layout.set |
+
+### Scheduling
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | schedule | schedule2 |
 | schedule_remove | schedule_remove2 |
+
+### Directory Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | get_directory | directory.default |
 | directory | directory.default.set |
 | set_directory | directory.default.set |
+
+### Ratio Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | ratio.disable | group.seeding.ratio.disable |
 | ratio.enable | group.seeding.ratio.enable |
 | ratio.max | group2.seeding.ratio.max |
@@ -26,6 +43,10 @@
 | ratio.min.set | group2.seeding.ratio.min.set |
 | ratio.upload | group2.seeding.ratio.upload |
 | ratio.upload.set | group2.seeding.ratio.upload.set |
+
+### Conversion commands
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | to_gm_date | convert.gm_date |
 | to_gm_time | convert.gm_time |
 | to_date | convert.date |
@@ -35,6 +56,10 @@
 | to_kb | convert.kb |
 | to_mb | convert.mb |
 | to_xb | convert.xb |
+
+### Protocol Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | get_connection_leech | protocol.connection.leech |
 | connection_leech | protocol.connection.leech.set |
 | set_connection_leech | protocol.connection.leech.set |
@@ -45,6 +70,10 @@
 | get_peer_exchange | protocol.pex |
 | peer_exchange | protocol.pex.set |
 | set_peer_exchange | protocol.pex.set |
+
+### Memory/Pieces Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | get_memory_usage | pieces.memory.current |
 | get_max_memory_usage | pieces.memory.max |
 | max_memory_usage | pieces.memory.max.set |
@@ -66,6 +95,10 @@
 | set_timeout_sync | pieces.sync.timeout.set |
 | get_timeout_safe_sync | pieces.sync.timeout_safe |
 | set_timeout_safe_sync | pieces.sync.timeout_safe.set |
+
+### Throttle Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | throttle_down | throttle.down |
 | get_throttle_down_max | throttle.down.max |
 | get_throttle_down_rate | throttle.down.rate |
@@ -113,6 +146,10 @@
 | throttle_up | throttle.up |
 | get_throttle_up_max | throttle.up.max |
 | get_throttle_up_rate | throttle.up.rate |
+
+### DHT Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | dht_add_node | dht.add_node |
 | dht | dht.mode.set |
 | get_dht_port | dht.port |
@@ -121,6 +158,10 @@
 | get_dht_throttle | dht.throttle.name |
 | set_dht_throttle | dht.throttle.name.set |
 | dht_statistics | dht.statistics |
+
+### Network Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | bind | network.bind_address.set |
 | ip | network.local_address.set |
 | port_random | network.port_random.set |
@@ -128,38 +169,6 @@
 | proxy_address | network.proxy_address.set |
 | scgi_port | network.scgi.open_port |
 | scgi_local | network.scgi.open_local |
-| get_session | session.path |
-| set_session | session.path.set |
-| session | session.path.set |
-| session_save | session.save |
-| get_name | session.name |
-| set_name | session.name.set |
-| get_session_on_completion | session.on_completion |
-| set_session_on_completion | session.on_completion.set |
-| get_session_lock | session.use_lock |
-| set_session_lock | session.use_lock.set |
-| system.method.insert | method.insert |
-| system.method.erase | method.erase |
-| system.method.get | method.get |
-| system.method.set | method.set |
-| system.method.list_keys | method.list_keys |
-| system.method.has_key | method.has_key |
-| system.method.set_key | method.set_key |
-| system.file_allocate | system.file.allocate |
-| system.file_allocate.set | system.file.allocate.set |
-| get_max_file_size | system.file.max_size |
-| set_max_file_size | system.file.max_size.set |
-| get_split_file_size | system.file.split_size |
-| set_split_file_size | system.file.split_size.set |
-| get_split_suffix | system.file.split_suffix |
-| set_split_suffix | system.file.split_suffix.set |
-| load | load.normal |
-| load_start | load.start |
-| load_start_verbose | load.start_verbose |
-| load_raw | load.raw |
-| load_raw_start | load.raw_start |
-| load_raw_verbose | load.raw_verbose |
-| load_verbose | load.verbose |
 | set_bind | network.bind_address.set |
 | get_bind | network.bind_address |
 | get_http_capath | network.http.capath |
@@ -198,12 +207,68 @@
 | get_xmlrpc_size_limit | network.xmlrpc.size_limit |
 | set_xmlrpc_size_limit | network.xmlrpc.size_limit.set |
 | xmlrpc_size_limit | network.xmlrpc.size_limit.set |
+
+### Session Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
+| get_session | session.path |
+| set_session | session.path.set |
+| session | session.path.set |
+| session_save | session.save |
+| get_name | session.name |
+| set_name | session.name.set |
+| get_session_on_completion | session.on_completion |
+| set_session_on_completion | session.on_completion.set |
+| get_session_lock | session.use_lock |
+| set_session_lock | session.use_lock.set |
+
+### Method Commands
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
+| system.method.insert | method.insert |
+| system.method.erase | method.erase |
+| system.method.get | method.get |
+| system.method.set | method.set |
+| system.method.list_keys | method.list_keys |
+| system.method.has_key | method.has_key |
+| system.method.set_key | method.set_key |
+
+### System Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
+| system.file_allocate | system.file.allocate |
+| system.file_allocate.set | system.file.allocate.set |
+| get_max_file_size | system.file.max_size |
+| set_max_file_size | system.file.max_size.set |
+| get_split_file_size | system.file.split_size |
+| set_split_file_size | system.file.split_size.set |
+| get_split_suffix | system.file.split_suffix |
+| set_split_suffix | system.file.split_suffix.set |
+
+### Load Commands
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
+| load | load.normal |
+| load_start | load.start |
+| load_start_verbose | load.start_verbose |
+| load_raw | load.raw |
+| load_raw_start | load.raw_start |
+| load_raw_verbose | load.raw_verbose |
+| load_verbose | load.verbose |
+
+### Tracker Settings
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | get_tracker_numwant | trackers.numwant |
 | set_tracker_numwant | trackers.numwant.set |
 | tracker_numwant | trackers.numwant.set |
 | get_use_udp_trackers | trackers.use_udp |
 | set_use_udp_trackers | trackers.use_udp.set |
 | use_udp_trackers | trackers.use_udp.set |
+
+### Download Commands/Variables
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | d.get_hash | d.hash |
 | d.get_local_id | d.local_id |
 | d.get_local_id_html | d.local_id_html |
@@ -292,6 +357,11 @@
 | create_link | d.create_link |
 | delete_link | d.delete_link |
 | delete_tied | d.delete_tied |
+| d.multicall | d.multicall2 |
+
+### Torrent Commands/Variables
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | t.get_group | t.group |
 | t.get_id | t.id |
 | t.get_min_interval | t.min_interval |
@@ -303,6 +373,10 @@
 | t.get_type | t.type |
 | t.get_url | t.url |
 | t.set_enabled | t.is_enabled.set |
+
+### File Commands/Variables
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | f.get_completed_chunks | f.completed_chunks |
 | f.get_frozen_path | f.frozen_path |
 | f.get_last_touched | f.last_touched |
@@ -319,6 +393,10 @@
 | f.get_size_chunks | f.size_chunks |
 | f.set_priority | f.priority.set |
 | fi.get_filename_last | fi.filename_last |
+
+### Peer Commands/Variables
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | p.get_address | p.address |
 | p.get_client_version | p.client_version |
 | p.get_completed_percent | p.completed_percent |
@@ -332,6 +410,10 @@
 | p.get_port | p.port |
 | p.get_up_rate | p.up_rate |
 | p.get_up_total | p.up_total |
+
+### View Commands/Variables
+| Deprecated Command | Replacement |
+| ------------------ | ----------- |
 | view_add | view.add |
 | view_filter | view.filter |
 | view_filter_on | view.filter_on |
@@ -340,4 +422,4 @@
 | view_sort | view.sort |
 | view_sort_current | view.sort_current |
 | view_sort_new | view.sort_new |
-| d.multicall | d.multicall2 |
+
