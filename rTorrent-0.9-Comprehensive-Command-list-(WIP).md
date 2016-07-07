@@ -10,16 +10,16 @@
 ### Execution
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
-| `execute2` | `execute` | See https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute -- Tilde gets special treatment |
+| `execute2` | `execute` | See [COMMAND-Execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute) -- Tilde gets special treatment |
 | `execute.throw` | `execute_throw` | Same as above |
 | `execute.throw.bg` |  | Same as above but run the command in the background |
-| `execute.nothrow` | `execute_nothrow` | See https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute |
+| `execute.nothrow` | `execute_nothrow` | See [COMMAND-Execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute) |
 | `execute.nothrow.bg` |  | Same as above but run the command in the background |
-| `execute.capture` | `execute_capture` | See https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute |
+| `execute.capture` | `execute_capture` | See [COMMAND-Execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute) |
 | `execute.capture_nothrow` | `execute_capture_nothrow` | Same as above |
-| `execute.raw` | `execute_raw` | See https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute -- Tilde does not get special treatment |
+| `execute.raw` | `execute_raw` | See [COMMAND-Execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute) -- Tilde does not get special treatment |
 | `execute.raw.bg` |  | Same as above but run the command in the background |
-| `execute.raw_nothrow` | `execute_raw_nothrow` | See https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute |
+| `execute.raw_nothrow` | `execute_raw_nothrow` | [COMMAND-Execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute) |
 | `execute.raw_nothrow.bg` |  | Same as above but run the command in the background |
 
 ### Scheduling
