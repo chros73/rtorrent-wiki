@@ -4,8 +4,8 @@
 ### Misc
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
-| encoding.add | encoding_list | Filename encodings |
-| keys.layout.set | key_layout | |
+| encoding.add | encoding_list | Configure filename encodings |
+| keys.layout.set | key_layout | Define keyboard layout for key bindings (<qwerty|azerty|qwertz|dvorak>) |
 
 ### Execution
 | Command | Deprecated Commands | Description |
