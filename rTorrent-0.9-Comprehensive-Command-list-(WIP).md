@@ -25,8 +25,8 @@
 ### Scheduling
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
-| `schedule2` | `schedule` | |
-| `schedule_remove2` | `schedule_remove` | |
+| `schedule2` | `schedule` | See [COMMAND-Scheduling](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling) |
+| `schedule_remove2` | `schedule_remove` | See [COMMAND-Scheduling](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling) |
 
 ### Directory Settings
 | Command | Deprecated Commands | Description |
