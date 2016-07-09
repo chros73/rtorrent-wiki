@@ -37,14 +37,14 @@
 | `schedule2` | `schedule` | See [COMMAND Scheduling](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling) |
 | `schedule_remove2` | `schedule_remove` | See [COMMAND Scheduling](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling) |
 
-### Directory Settings
+### Directory
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `directory.default` | `get_directory` | Prints the default directory for downloaded torrent data |
 | `directory.default.set` | `directory` | Sets the default directory for downloaded torrent data |
 | `directory.default.set` | `set_directory` | Same as above |
 
-### Ratio Settings
+### Ratio
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `group.seeding.ratio.disable` | `ratio.disable` | |
@@ -56,7 +56,7 @@
 | `group2.seeding.ratio.upload`	| `ratio.upload` | |
 | `group2.seeding.ratio.upload.set` | `ratio.upload.set` | |
 
-### Conversion commands
+### Conversion
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `convert.date` | `to_date` | |
@@ -69,7 +69,7 @@
 | `convert.throttle` | `to_throttle` | |
 | `convert.xb` | `to_xb` | |
 
-### Protocol Settings
+### Protocol
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `protocol.connection.leech` | `get_connection_leech` | |
@@ -83,7 +83,7 @@
 | `protocol.pex.set` | `peer_exchange` | |
 | `protocol.pex.set` | `set_peer_exchange` | |
 
-### Memory Settings, Pieces Variables/Commands
+### Memory/Pieces
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `pieces.memory.current` | `get_memory_usage` | |
@@ -108,7 +108,7 @@
 | `pieces.sync.timeout_safe` | `get_timeout_safe_sync` | |
 | `pieces.sync.timeout_safe.set` | `set_timeout_safe_sync` | |
 
-### Throttle Settings
+### Throttle
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `throttle.down` | `throttle_down` | |
@@ -159,7 +159,7 @@
 | `throttle.up.max` | `get_throttle_up_max` | |
 | `throttle.up.rate` | `get_throttle_up_rate` | |
 
-### DHT Settings
+### DHT
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `dht.add_node` | `dht_add_node` | |
@@ -171,7 +171,7 @@
 | `dht.throttle.name.set` | `set_dht_throttle` | |
 | `dht.statistics` | `dht_statistics` | |
 
-### Network Settings
+### Network
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `network.bind_address` | `get_bind` | |
@@ -220,7 +220,7 @@
 | `network.xmlrpc.size_limit.set` | `set_xmlrpc_size_limit` | |
 | `network.xmlrpc.size_limit.set` | `xmlrpc_size_limit` | |
 
-### Session Settings
+### Session
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `session.path` | `get_session` | |
@@ -234,7 +234,7 @@
 | `session.use_lock` | `get_session_lock` | |
 | `session.use_lock.set` | `set_session_lock` | |
 
-### Method Commands
+### Method
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `method.insert` | `system.method.insert` | |
@@ -245,7 +245,7 @@
 | `method.has_key` | `system.method.has_key` | |
 | `method.set_key` | `system.method.set_key` | |
 
-### System Commands/Variables
+### System
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `system.file.allocate` | `system.file_allocate` | |
@@ -257,7 +257,7 @@
 | `system.file.split_suffix` | `get_split_suffix` | |
 | `system.file.split_suffix.set` | `set_split_suffix` | |
 
-### Load Commands
+### Load
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `load.normal` | `load` | |
@@ -268,7 +268,7 @@
 | `load.raw_verbose` | `load_raw_verbose` | |
 | `load.verbose` | `load_verbose` | |
 
-### Tracker Settings
+### Tracker
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `trackers.numwant` | `get_tracker_numwant` | |
@@ -278,7 +278,7 @@
 | `trackers.use_udp.set` | `set_use_udp_trackers` | |
 | `trackers.use_udp.set` | `use_udp_trackers` | |
 
-### Download Commands/Variables
+### Downloads
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `d.base_filename` | `d.get_base_filename` | |
@@ -371,7 +371,7 @@
 | `d.uploads_max` | `d.get_uploads_max` | |
 | `d.uploads_max.set` | `d.set_uploads_max` | |
 
-### Torrent Commands/Variables
+### Torrents
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `t.group` | `t.get_group` | |
@@ -386,7 +386,7 @@
 | `t.type` | `t.get_type` | |
 | `t.url` | `t.get_url` | |
 
-### File Commands/Variables
+### Files
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `f.completed_chunks` | `f.get_completed_chunks` | |
@@ -406,7 +406,7 @@
 | `f.priority.set` | `f.set_priority` | |
 | `fi.filename_last` | `fi.get_filename_last` | |
 
-### Peer Commands/Variables
+### Peers
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `p.address` | `p.get_address` | |
@@ -423,7 +423,7 @@
 | `p.up_rate` | `p.get_up_rate` | |
 | `p.up_total` | `p.get_up_total` | |
 
-### View Commands/Variables
+### Views
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
 | `view.add` | `view_add` | |
