@@ -33,7 +33,7 @@
 | ------- | ------------------- | ----------- |
 | `directory.default` | `get_directory` | Prints the default directory for downloaded torrent data |
 | `directory.default.set` | `directory` | Sets the default directory for downloaded torrent data |
-| `directory.default.set` | `set_directory` | |
+| `directory.default.set` | `set_directory` | Same as above |
 
 ### Ratio Settings
 | Command | Deprecated Commands | Description |
