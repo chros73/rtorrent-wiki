@@ -1,6 +1,15 @@
 # Comprehensive list of rTorrent 0.9 commands
 #### Use of the deprecated commands is highly discouraged as those commands are subject to removal at any time.
 
+### Operators
+| Command | Deprecated Commands | Description |
+| ------- | ------------------- | ----------- |
+| `if` | - | Evaluates a condition to be either true or false and takes action based on that |
+| `not` | - | Inversion of `if` Evaluates a condition to be either NOT true or NOT false and takes action based on that |
+| `false` | - | Always returns false - used when you want to take action on something being false |
+| `and` | - | Evaluates 2 or more conditions and takes action based on whether both are true or if one is false |
+| `or` | - | Evaluates 2 or more conditions and takes action based on whether one is true, or both are false |
+
 ### Misc
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
@@ -50,14 +59,14 @@
 ### Conversion commands
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
-| `convert.gm_date` | `to_gm_date` | |
-| `convert.gm_time` | `to_gm_time` | |
 | `convert.date` | `to_date` | |
 | `convert.elapsed_time` | `to_elapsed_time` | |
-| `convert.time` | `to_time` | |
-| `convert.throttle` | `to_throttle` | |
+| `convert.gm_date` | `to_gm_date` | |
+| `convert.gm_time` | `to_gm_time` | |
 | `convert.kb` | `to_kb` | |
 | `convert.mb` | `to_mb` | |
+| `convert.time` | `to_time` | |
+| `convert.throttle` | `to_throttle` | |
 | `convert.xb` | `to_xb` | |
 
 ### Protocol Settings
