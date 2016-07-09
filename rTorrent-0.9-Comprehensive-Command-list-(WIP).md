@@ -31,8 +31,8 @@
 ### Directory Settings
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
-| `directory.default` | `get_directory` | |
-| `directory.default.set` | `directory` | |
+| `directory.default` | `get_directory` | Prints the default directory for downloaded torrent data |
+| `directory.default.set` | `directory` | Sets the default directory for downloaded torrent data |
 | `directory.default.set` | `set_directory` | |
 
 ### Ratio Settings
