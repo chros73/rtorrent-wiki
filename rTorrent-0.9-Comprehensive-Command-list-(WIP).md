@@ -1,6 +1,10 @@
 # Comprehensive list of rTorrent 0.9 commands
 #### Use of the deprecated commands is highly discouraged as those commands are subject to removal at any time.
 
+The type column indicates whether it is a variable or a command. You can use ^x (Ctrl+x) to open the command input box and either enter a command like `directory.default.set=/some/path` or you can print the value of a variable to see what the current setting for a command is, like `print=$directory.default=`
+
+Note: To print a variable, you have to include the equal sign at the end.
+
 ### Operators
 | Command | Deprecated Commands | Description |
 | ------- | ------------------- | ----------- |
