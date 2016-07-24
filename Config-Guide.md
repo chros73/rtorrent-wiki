@@ -36,6 +36,7 @@ These pages and the following sections cover information that you don't need whe
  * [Tor Proxying](https://github.com/rakshasa/rtorrent/wiki/Tor-based-Proxying-Guide)
  * [Using DHT](https://github.com/rakshasa/rtorrent/wiki/Using-DHT)
  * [Using XMLRPC with rTorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
+ * [Performance Tuning](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning)
 
 ### Manually setting the local IP ###
 
