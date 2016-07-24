@@ -6,6 +6,15 @@
   * [Peers and slots](#peers-and-slots)
     * [Definitions](#definitions)
     * [Assigning the right values](#assigning-the-right-values)
+    * [Memory impact](#memory-impact)
+  * [Max memory usage setting](#max-memory-usage-setting)
+  * [Reduce disk usage](#reduce-disk-usage)
+    * [Send and receive buffer size](#send-and-receive-buffer-size)
+    * [Preloading pieces](#preloading-pieces)
+    * [Max open files](#max-open-files)
+    * [Disk allocation](#disk-allocation)
+    * [Session save](#session-save)
+  * [DNS timeout](#dns-timeout)
  * [System wide settings](#system-wide-settings)
   * [Max open files](#max-open-files)
   * [Networking tweaks](#networking-tweaks)
@@ -48,8 +57,9 @@ throttle.max_uploads.set = 50
 #  A negative value disables this feature. Default: `-1` (`tracker_numwant`)
 trackers.numwant.set = 100
 
-# Set the max amount of memory space used to mapping file chunks. This refers to memory mapping, not physical memory
-#  allocation. (`max_memory_usage`) This may also be set using ulimit -m where 3/4 will be allocated to file chunks.
+# Set the max amount of memory address space used to mapping file chunks. This refers to memory mapping, not
+#  physical memory allocation. Default: `1GB` (`max_memory_usage`) 
+# This may also be set using ulimit -m where 3/4 will be allocated to file chunks.
 pieces.memory.max.set = 2048M
 
 # Maximum number of connections rtorrent can accept/make (`sockets`)
@@ -124,6 +134,75 @@ It all depends on the global connection speeds (`throttle.global_down.max_rate`,
 3. `max_peers` settings for downloading and seeding should be at least 2 times higher than the number of slots per torrent, hence the value of `100` for them.
 
 4. `min_peers` settings are `99` for both uploading and downloading, meaning we always want to ask the tracker for new peers.
+
+#### Memory impact
+
+For every download or upload slot you allow you need a chunk's worth of RAM in the system to cache the chunks. E.g. if the current torrent your are uploading has a chunk size of `4 MiB` then you would need `200 MiB` (`4 MiB * 50 slots`) of RAM for `rTorrent` to use. Chunk sizes per torrent range from `256 KiB` to around `8 MiB`.
+
+That means, we need `2.4 GiB` of RAM (`4 MiB * 600 slots`) if the average chunk size is `4 MiB` in the worst case.
+
+### Max memory usage setting
+
+`pieces.memory.max` is commonly misunderstood setting: it doesn't limit or set the amount of RAM `rTorrent` can use (see [Reduce disk usage](#reduce-disk-usage) section below) but limits the amount of memory address space used to mapping file chunks. This refers to memory mapping, not physical memory allocation. Default value is `1 GiB`
+
+That's how can happen that you never see e.g. greater value than `800 MiB` for `RES` in `htop` beside of the `rtorrent` process.
+
+For fast downloads and/or large number of peers this may quickly be exhausted causing the client to hang while it syncs to disk. You may increase this limit.
+
+### Reduce disk usage
+
+In theory, we can reduce disk i/o :) See this issue why: [#443](https://github.com/rakshasa/rtorrent/issues/443)
+
+#### Send and receive buffer size
+
+The `network.send_buffer.size` and `network.receive_buffer.size` options can be used to adjust the socket send and receive buffer sizes. If you set these to a low number, you may see reduced throughput, especially for high latency connections. Increasing buffer sizes may help reduce disk seeking, connection polling as more data is buffered each time the socket is written to. See [Networking tweaks](#networking-tweaks) section how to adjust it system wide.
+
+It affects memory usage: this memory will not be visible in `rtorrent` process, this sets the amount of kernel memory is used for your sockets. In low-memory, high-bandwidth case you still want decent buffer sizes. It is however the number of upload/downloading peers you want to reduce. (Reference: [#435](https://github.com/rakshasa/rtorrent/issues/435#issuecomment-226979078))
+
+#### Preloading pieces
+
+When a piece is to be uploaded to a peer it can preload the piece of the file before it does the non-blocking write to the network. This will not complete the whole piece if parts of the piece is not already in memory, having instead to try again later. (Reference: [#418](https://github.com/rakshasa/rtorrent/issues/418))
+
+`pieces.preload.type` Default: `0`. Possible values:
+- `0` = off: it doesn't do any.
+- `1` = Madvise: it calls 'madvise' on the file for the specific mmap'ed memory range, which tells the kernel to load it in memory when it gets around to it. Which is hopefully before we write to the network socket.
+- `2` = Direct paging: we 'touch' each file page in order to force the kernel to load it into memory. This can help if you're dealing with very large number of peers and large/many files, especially in a low-memory setting, as you can avoid thrashing the disk where loaded file pages get thrown out before they manage to get sent.
+
+Related settings:
+```ini
+#pieces.preload.min_size.set = 262144
+#pieces.preload.min_rate.set = 5120
+```
+
+#### Max open files
+
+`network.max_open_files` limits the maximum number of open files `rTorrent` can keep open. By default rTorrent uses variable sized `fd_set`'s depending on the process `sysconf(_SC_OPEN_MAX)` limit. See [Networking tweaks](#networking-tweaks) section how to adjust it system wide.
+
+Large `fd_set`'s cause a performance penalty as they must be cleared each time the client polls the sockets. When using `select` or `epoll` (until `libcurl` is fixed) based polling use an open files limit that is reasonably low (_is it still the case???_). The widely used default of `1024` is enough for most users and `64` is minimum. Those with embeded devices or older platforms might need to set the limit much lower than the default.
+
+(Due to `libcurl`'s use of `fd_set` for polling, `rTorrent` cannot at the moment move to a pure `epoll` implementation. Currently the `epoll` code uses `select` based polling if, and only if, `libcurl` is active. All `non-libcurl` sockets are still in `epoll`, but `select` is used on the `libcurl` and the `epoll`-socket. (_is it still the case???_))
+
+#### Disk allocation
+
+`system.file.allocate` specifies whether to allocate disk space for a new torrent. Default is `0`. It's suggested to leave it off: it reduce disk usage when a torrent is added.
+
+Opening a torrent causes files to be created and resized with `ftruncate` (`ftruncate` has problem on vfat filesystem, though.) This does not actually use disk space until data is written, despite what the file sizes are reported as. Use `du` without the flag `--apparent-size` to see the real disk usage.
+
+#### Session save
+
+`rTorrent` saves all the sessions in every 20 minutes by default. With large amount of torrents this can be a disk performance hog (see [#180](https://github.com/rakshasa/rtorrent/issues/180#issuecomment-55140832)).
+
+Increase this interval, e.g. to 12 hours instead, if you think you're system is stable and/or you don't care about the possible loss of resume and local stat in the meantime, with:
+```ini
+schedule2 = session_save, 1200, 43200, ((session.save))
+```
+
+(_What is this for??? `schedule2 = prune_file_status, 3600, 86400, ((system.file_status_cache.prune))`_)
+
+
+### DNS timeout
+
+Along with [Name resolving enhancements](#name-resolving-enhancements) we can reduce http DNS cache timeout with `network.http.dns_cache_timeout`. Since we set it in [Networking tweaks](#networking-tweaks) to `30`, let's lower it to `25`. Default is `60` sec.
 
 
 ## System wide settings
