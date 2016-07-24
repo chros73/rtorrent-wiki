@@ -3,6 +3,9 @@
 
  * [rTorrent related settings](#rtorrent-related-settings)
   * [Sample config entries](#sample-config-entries)
+  * [Peers and slots](#peers-and-slots)
+    * [Definitions](#definitions)
+    * [Assigning the right values](#assigning-the-right-values)
  * [System wide settings](#system-wide-settings)
   * [Max open files](#max-open-files)
   * [Networking tweaks](#networking-tweaks)
@@ -14,13 +17,11 @@
 
 ## rTorrent related settings
 
-rTorrent uses a different philosophy than most other torrent client.
+Assuming everything is going well we can focus on performance tuning.
 
 ### Sample config entries
 
-Assuming everything is going well we can focus on performance tuning. Let's see the related possible settings at once first.
-
-These settings are used with 74/20 Mbps connection, 4 GB RAM and 1 local disk device.
+Let's see the related possible settings at once first. These settings are used with 74/20 Mbps connection, 4 GB RAM and 1 local disk device and with `rTorrent v0.9.6`.
 
 ```ini
 # Global upload and download rate in KiB, `0` for unlimited (`download_rate`, `upload_rate`)
@@ -31,15 +32,16 @@ throttle.global_up.max_rate.set_kb   = 2200
 throttle.max_downloads.global.set = 300
 throttle.max_uploads.global.set   = 300
 
-# Maximum and minimum number of peers to connect to per torrent while downloading (`min_peers`, `max_peers`)
+# Maximum and minimum number of peers to connect to per torrent while downloading (`min_peers`, `max_peers`) Default: `100` and `200` respectively
 throttle.min_peers.normal.set = 99
 throttle.max_peers.normal.set = 100
 
-# Same as above but for seeding completed torrents (seeds per torrent), `-1` for same as downloading (`min_peers_seed`, `max_peers_seed`)
+# Same as above but for seeding completed torrents (seeds per torrent), `-1` for same as downloading (`min_peers_seed`, `max_peers_seed`) Default: `-1` for both
 throttle.min_peers.seed.set = -1
 throttle.max_peers.seed.set = -1
 
-# Maximum number of simultanious uploads per torrent (upload slots!) (`max_uploads`)
+# Maximum number of simultaneous downloads and uploads slots per torrent (`max_uploads`) Default: `50` for both
+throttle.max_downloads.set = 50
 throttle.max_uploads.set = 50
 
 # Set the numwant field sent to the tracker, which indicates how many peers we want. 
@@ -56,7 +58,7 @@ network.max_open_sockets.set = 999
 # Maximum number of open files rtorrent can keep open (you have to modify the system wide settings with ulimit!) (`set_max_open_files`)
 network.max_open_files.set = 600
 
-# Maximum number of simultanous HTTP request (used by announce or scrape requests) Default: `32` (`set_max_open_http`)
+# Maximum number of simultaneous HTTP request (used by announce or scrape requests) Default: `32` (`set_max_open_http`)
 network.http.max_open.set = 99
 
 # Send and receive buffer size for socket. Disabled by default (`0`), this means the default is used by OS 
@@ -76,6 +78,13 @@ pieces.preload.type.set = 2
 # Possible values: `[default|lowdelay|throughput|reliability|mincost]` or a hex value.
 #network.tos.set = throughput
 
+# CURL options to add support for nonofficial SSL trackers and peers
+network.http.ssl_verify_host.set = 0
+network.http.ssl_verify_peer.set = 0
+
+# CURL option to lower DNS timeout. Default: `60`.
+network.http.dns_cache_timeout.set = 25
+
 # Max packet size using xmlrpc. Default: `524288` (xmlrpc_size_limit)
 network.xmlrpc.size_limit.set = 2M
 
@@ -88,6 +97,33 @@ schedule2 = session_save, 1200, 43200, ((session.save))
 # Whether to allocate disk space for a new torrent. Default: `0`
 #system.file.allocate.set = 0
 ```
+
+### Peers and slots
+
+`rTorrent` uses a different philosophy than most other torrent client. 
+
+#### Definitions
+
+`slots` - can be upload or download `slots` - determine how many `peers` can actually transfer data at the same time, while `rTorrent` can be connected with way more `peers`. The allowed numbers of `connected peers` should be 2 or 3 times higher than the allowed number of `slots`.
+
+- `throttle.max_downloads.global`, `throttle.max_uploads.global`: maximum number of global simultaneous downloads and uploads slots. These values limit the global slots, can be seen at the right part of status bar: `[U 45/300] [D 179/300]`
+- `throttle.max_uploads`, `throttle.max_downloads`: maximum number of simultaneous downloads and uploads slots per torrent. It can be seen at the bottom left a torrent details page (using right arrow): `Slots: U:0/50 D:0/50`
+- `throttle.max_peers.normal`, `throttle.max_peers.seed`: maximum number of peers to connect to per torrent while downloading or seeding. It can be seen (along with the connected peers) at the bottom left a torrent details page (using right arrow): `Peers: 43(0) Min/Max: 99/100`
+- `throttle.min_peers.normal`, `throttle.min_peers.seed`: minimum number of peers to connect to per torrent while downloading or seeding. It can be seen (along with the connected peers) at the bottom left a torrent details page (using right arrow): `Peers: 43(0) Min/Max: 99/100`
+
+The `min_peers` values are responsible for asking more peers during an announce request. In theory, if these values are `0` then rTorrent won't ask for new peers from the given tracker, peers can still connect though.
+
+#### Assigning the right values
+
+It all depends on the global connection speeds (`throttle.global_down.max_rate`, `throttle.global_up.max_rate`) and available RAM.
+
+1. every upload slot should have got at least `5 KiB/s` speed left (it's not really problem anymore with nowdays fast connection). Taking the above example, in the worst case download slots have `29 KiB/s` (`8700/300`) and upload slots have `7.3 KiB/s` (`2200/300`). That means the number of the global download slot can be increased if we notice that we run out of it.
+
+2. `throttle.max_downloads` and `throttle.max_uploads` slots are `50` now. In the worst case this allows downloading and uploading `6` (`300/50`) torrents at the same time, but this usually not a problem for seeding.
+
+3. `max_peers` settings for downloading and seeding should be at least 2 times higher than the number of slots per torrent, hence the value of `100` for them.
+
+4. `min_peers` settings are `99` for both uploading and downloading, meaning we always want to ask the tracker for new peers.
 
 
 ## System wide settings
