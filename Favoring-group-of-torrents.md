@@ -1,14 +1,19 @@
 # Favoring one group of torrents over the rest of them
 
-This is one of the most frequently asked questions regarding to the usage of `rTorrent`. It turned out that its realization is pretty simple: let's adjust upload rate dynamically and other attributes of them.
+This is one of the most frequently asked questions regarding to the usage of `rTorrent`. It turned out that its realization is pretty simple: let's adjust upload rate dynamically for the rest and other attributes of them.
+
+This feature is so powerful that it will change the way you use to worked with `rTorrent`.
 
 **Contents**
 
  * [Scenario](#scenario)
+ * [Theory](#theory)
  * [Realization](#realization)
-  * [Theory](#theory)
   * [Sample config](#sample-config)
   * [Helper script](#helper-script)
+  * [How it works](#how-it-works)
+    * [Getting new uprate limit for slowup throttle](#getting-new-uprate-limit-for-slowup-throttle)
+    * [Getting new global downrate limit](#getting-new-global-downrate-limit)
 
 ## Scenario
 
@@ -19,10 +24,9 @@ There are sites where seeding data back is pretty hard while it's easy for other
 Applying this to downloading is easy (all we have to set is `d.priority` accordingly and it will take care about everything) but not to seeding.
 
 
-## Realization
+## Theory
 
-### Theory
-
+Let's take a look what we need for this:
 - define 1 `throttle.up` group named `slowup` and set an inital value for it that will contain all the unimportant torrents (torrents that are assigned to this group)
 - torrents that don't belong to the `slowup` throttle belong to the special group
 - set `d.priority` to high for the special group that will take care of the downloading part
@@ -30,6 +34,11 @@ Applying this to downloading is easy (all we have to set is `d.priority` accordi
 - setup 2 watch directories to automate this assignment between torrents and groups
 - adjust the upload rate of `slowup` throttle on the fly (with the help of an external script) depending on the current upload rate of the special group and the current global upload rate  
 
+Since all we want to do is seeding (unfortunately we have to download before it :) ), we can also deal with the common problem of asynchronous connections (e.g. ADSL) where upload speed can be slowed down if download speed is close to maximum bandwidth:
+- adjusts the global download rate dynamically to always leave enough bandwidth to the upload rate of 1st main (special) group
+
+
+## Realization
 
 ### Sample config
 
@@ -114,5 +123,39 @@ method.insert = i, simple, "print=\"$get_limit=$cat=info,$convert.kb=$throttle.g
 
 ### Helper script
 
-We need an [`getLimits.sh`](https://github.com/chros73/rtorrent-ps_setup/blob/master/ubuntu-14.04/home/chros73/bin/getLimits.sh) external script that should be placed under `~/bin` directory, since we can't do basic math in `rTorrent` config files.
+Since we can't do basic arithmetic operations in `rTorrent` config files, we need the [`getLimits.sh`](https://github.com/chros73/rtorrent-ps_setup/blob/master/ubuntu-14.04/home/chros73/bin/getLimits.sh) external script that should be placed under `~/bin` directory (it's only linked here because it's too long with comments).
 
+It can do 3 things:
+- gets new uprate limit for `slowup` throttle (based upon the configured variables and the given parameters)
+ - specify the top of the cap (`sluplimit`: highest allowable value in KiB, e.g. `1700`) for `slowup` throttle
+ - specify the bottom of the cap (`sldownlimit`: lowest allowable value in KiB, e.g. `100`) for `slowup` throttle
+- gets new global downrate limit (based upon the configured variables and the given parameters)
+ - specify the top of the cap (`gldownlimitmax` in KiB, e.g. `9999`) for global downrate
+ - specify the bottom of the cap (`gldownlimitmin` in KiB, e.g. `7500`) for global downrate
+ - specify the global uprate limit (`alluplimit` in KiB, e.g. `1600`) that above this value it should lower global downrate
+ - specify the main (special) uprate limit (`mainuplimit` in KiB, e.g. `1200`) that above this value it should lower global downrate
+- gets info about current speed and limits in the form of: `MainUpRate: 1440 , ThrottleUpRate: 92 , ThrottleLimit: 100`
+ - note: this functionality is deprecated, use [this patch for rTorrent](https://github.com/rakshasa/rtorrent/pull/447) or [rtorrent-ps-ch](https://github.com/chros73/rtorrent-ps) to be able to get realtime info about these
+
+You have to edit the variables at the beginning of the script according to your needs, it probably also needs some experimenting which values works best for your needs. There's one more advantage of including variables in the script itself that you can modify them while `rTorrent` is running and the new values will be used next time when the script is called.
+
+
+### How it works
+
+Once you "installed" both the sample config and the helper script then it works already:
+- once you put a torrent into a watch directory all the necessary attributes are assigned to it
+- `adjust_throttle_slowup` runs in every 20 seconds
+- `adjust_throttle_global_down_max_rate` runs in every 60 seconds
+
+#### Getting new uprate limit for slowup throttle
+
+It doesn't use a complicated algorithm to always give back a reliable result, `sluplimit - mainup`, but it works pretty efficiently:
+- checks the current uprate of throttle and uprate of main (special) group (with the help of the global uprate) then it raises or lowers the throttle limit according to the uprate of the main group
+- you should leave a considerable amount of gap ~`20%` (~`500 KiB`, in this case) between the top of the cap (`sluplimit` , e.g. `1700`) and the max global upload rate (upload_rate : the global upload limit , e.g. `2200`) to be able to work efficiently: to leave bandwidth to the main (special) group between checks (within that 20 seconds interval)
+
+#### Getting new global downrate limit
+
+This one even less sophisticated then the above one, it only sets one of the 2 defined `gldownlimitmax`, `gldownlimitmin` values for global downrate:
+- whether global upload rate is bigger than the specified global uprate limit (`alluplimit`) and main (special) upload rate is bigger than the specified main uprate limit (`mainuplimit`)
+
+Remember, if you don't need this feature then comment out `adjust_throttle_global_down_max_rate` scheduling in `rTorrent` config.
