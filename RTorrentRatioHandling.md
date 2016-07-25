@@ -45,12 +45,15 @@ ratio.min
 ratio.min.set
 ratio.upload
 ratio.upload.set
+```
 
 The 'group.seeding.view' variable points to the 'seeding' view, which contains all seeding downloads, and the default 'ratio.command' closes the download. To enabled or disable the ratio handling for the group, call the 'enable' and 'disable' commands which automatically adds it to the scheduler.
-Ratio groups
+
+# Ratio groups
 
 If you wish to specify different ratio's for different watch directories, do the following:
 
+```
 # Add new views. You may find out what downloads they contain through
 # 'ui.current_view.set=group_1' command or XMLRPC calls.
 view_add = view_group_1
