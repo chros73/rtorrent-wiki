@@ -37,6 +37,7 @@ These pages and the following sections cover information that you don't need whe
  * [Using DHT](https://github.com/rakshasa/rtorrent/wiki/Using-DHT)
  * [Using XMLRPC with rTorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
  * [Performance Tuning](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning)
+ * [Favoring one group of torrents over the rest of them](https://github.com/rakshasa/rtorrent/wiki/Favoring-group-of-torrents)
 
 ### Manually setting the local IP ###
 
