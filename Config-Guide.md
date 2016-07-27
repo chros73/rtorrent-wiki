@@ -38,6 +38,7 @@ These pages and the following sections cover information that you don't need whe
  * [Using XMLRPC with rTorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
  * [Performance Tuning](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning)
  * [Favoring one group of torrents over the rest of them](https://github.com/rakshasa/rtorrent/wiki/Favoring-group-of-torrents)
+ * [Auto-Scraping](https://github.com/rakshasa/rtorrent/wiki/Auto-Scraping)
 
 ### Manually setting the local IP ###
 
