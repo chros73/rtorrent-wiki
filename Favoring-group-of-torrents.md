@@ -135,7 +135,7 @@ It can do 3 things:
  - specify the global uprate limit (`alluplimit` in KiB, e.g. `1600`) that above this value it should lower global downrate
  - specify the main (special) uprate limit (`mainuplimit` in KiB, e.g. `1200`) that above this value it should lower global downrate
 - gets info about current speed and limits in the form of: `MainUpRate: 1440 , ThrottleUpRate: 92 , ThrottleLimit: 100`
- - note: this functionality is deprecated, use [this patch for rTorrent](https://github.com/rakshasa/rtorrent/pull/447) or [rtorrent-ps-ch](https://github.com/chros73/rtorrent-ps) to be able to get realtime info about these
+ - note: this functionality is deprecated, use [this patch for rTorrent / rTorrent-PS](https://github.com/rakshasa/rtorrent/pull/447) or [rTorrent-PS-CH](https://github.com/chros73/rtorrent-ps/blob/master/README.rst#fork-notes) to be able to get realtime info about these
 
 You have to edit the variables at the beginning of the script according to your needs, it probably also needs some experimenting which values works best for your needs. There's one more advantage of including variables in the script itself that you can modify them while `rTorrent` is running and the new values will be used next time when the script is called.
 
