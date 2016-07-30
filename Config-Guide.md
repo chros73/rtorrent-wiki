@@ -4,6 +4,7 @@
  * [Basic Configuration](#basic-configuration)
  * [Advanced Use-Cases](#advanced-use-cases)
  * [Advanced Topics](#advanced-topics)
+ * [Complete solutions](#complete-solutions)
 
 
 ## Basic Configuration 
@@ -51,3 +52,10 @@ The client may spend as much as 60 seconds trying to contact a UDP tracker, so i
 
  * [Logging](https://github.com/rakshasa/rtorrent/wiki/LOG-Logging)
  * [Migration to the 0.9.x command syntax](https://github.com/rakshasa/rtorrent/wiki/RPC-Migration-0.9)
+
+
+## Complete solutions
+
+* [pimp-my-box](https://github.com/pyroscope/pimp-my-box)
+* [Ultimate Torrent Setup](https://github.com/xombiemp/ultimate-torrent-setup/wiki)
+* [Automated rTorrent-PS configuration](https://github.com/chros73/rtorrent-ps_setup)
