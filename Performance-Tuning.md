@@ -121,7 +121,7 @@ schedule2 = session_save, 1200, 43200, ((session.save))
 - `throttle.max_peers.normal`, `throttle.max_peers.seed`: maximum number of peers to connect to per torrent while downloading or seeding. It can be seen (along with the connected peers) at the bottom left a torrent details page (using right arrow): `Peers: 43(0) Min/Max: 99/100`
 - `throttle.min_peers.normal`, `throttle.min_peers.seed`: minimum number of peers to connect to per torrent while downloading or seeding. It can be seen (along with the connected peers) at the bottom left a torrent details page (using right arrow): `Peers: 43(0) Min/Max: 99/100`
 
-The `min_peers` values are responsible for asking more peers during an announce request. In theory, if these values are `0` then rTorrent won't ask for new peers from the given tracker, peers can still connect though.
+The `min_peers` values are responsible for asking more peers during an announce request. When the client has less than `min_peers` connections for a download, it will attempt to request more from available trackers. 30 seconds after a request the client will attempt another if more than 10 new peer connections were gained or less than 3 requests have been performed. Else it will try the next tracker group in the list, but not other trackers in the same group. This behavior should give enough peers while minimizing the number of tracker requests, although it will use somewhat longer time than other more aggressive clients. In theory, if these values are `0` then rTorrent won't ask for new peers from the given tracker, peers can still connect though.
 
 #### Assigning the right values
 
