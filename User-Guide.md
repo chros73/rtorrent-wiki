@@ -82,6 +82,7 @@ This message is caused by deleting/modifying the downloaded file after a torrent
 | Shortcut | Description |
 | ------------- | ------------- |
 | right |  Switch to Download View. | 
+| ^x | Call commands or change settings. | 
 | ^e | Set  the 'create/resize queued' flags on all files in a torrent. This is necessary if the underlying files in a torrent have been deleted or truncated, and thus rtorrent must recreate them. |
 | ^r | Initiate hash check of torrent. Without starting to download/upload. | 
 | +/- | Change priority of torrent. | 
