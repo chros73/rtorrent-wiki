@@ -15,6 +15,7 @@ rTorrent client uses ncurses and is ideal for use with [tmux](https://tmux.githu
  * [User's Manual](#users-manual)
  * [Other Information](#other-information)
  * [Download Links](#download-links)
+ * [Install](#Install)
  * [Packages](#packages)
  * [Disclaimer](#disclaimer)
  * [Stuff](#stuff)
@@ -23,13 +24,37 @@ rTorrent client uses ncurses and is ideal for use with [tmux](https://tmux.githu
 ## User's Manual
  * the [User Guide](https://github.com/rakshasa/rtorrent/wiki/User-Guide) explains how to use the ‘curses’ UI, and what the displayed information actually means.
  * the [Configuration Guide](https://github.com/rakshasa/rtorrent/wiki/Config-Guide) helps you to adapt rTorrent to serve your needs.
+   * [rTorrent Configuration Template](https://github.com/rakshasa/rtorrent/wiki/CONFIG-Template)
+   * [Watch Directories](https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories)
+   * [Ratio Handling](https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling)
+   * [Tor Proxying](https://github.com/rakshasa/rtorrent/wiki/Tor-based-Proxying-Guide)
+   * [Using DHT](https://github.com/rakshasa/rtorrent/wiki/Using-DHT)
+   * [Using XMLRPC with rTorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
+   * [Performance Tuning](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning)
+   * [Favoring one group of torrents over the rest of them](https://github.com/rakshasa/rtorrent/wiki/Favoring-group-of-torrents)
+   * [Auto-Scraping](https://github.com/rakshasa/rtorrent/wiki/Auto-Scraping)
+   * [Logging](https://github.com/rakshasa/rtorrent/wiki/LOG-Logging)
+   * [Migration to the 0.9.x command syntax](https://github.com/rakshasa/rtorrent/wiki/RPC-Migration-0.9)
+   * [Common Tasks in rTorrent](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent)
+   * [Choke Groups](https://github.com/rakshasa/rtorrent/wiki/Choke-Groups)
+   * [IP filtering](https://github.com/rakshasa/rtorrent/wiki/IP-filtering)
+   * [rTorrent 0.9 Comprehensive Command list](https://github.com/rakshasa/rtorrent/wiki/rTorrent-0.9-Comprehensive-Command-list-(WIP))
+   * [Using initial seeding](https://github.com/rakshasa/rtorrent/wiki/Using-initial-seeding)
  * the [Scripting Guide](https://github.com/rakshasa/rtorrent/wiki/Scripting-Guide) allows ‘power users’ to extend rTorrent's configuration with more complex logic, and control it remotely via XMLRPC.
+  * [COMMAND execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute)
+  * [COMMAND schedule](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling)
+  * [COMMAND system](https://github.com/rakshasa/rtorrent/wiki/COMMAND-System)
+  * [COMMAND ui](https://github.com/rakshasa/rtorrent/wiki/COMMAND-UserInterface)
+  * [RPC Migration 0.9](https://github.com/rakshasa/rtorrent/wiki/RPC-Migration-0.9)
+  * [RPC Option Strings](https://github.com/rakshasa/rtorrent/wiki/RPC-Option-Strings)
+  * [RPC Setup XMLRPC](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
+  * [RPC Utility XMLRPC2SCGI](https://github.com/rakshasa/rtorrent/wiki/RPC-Utility-XMLRPC2SCGI)
 
 
 ## Other Information
 
  * List of [Known Issues](https://github.com/rakshasa/rtorrent/wiki/Issues)
-
+ * List of [Todos](https://github.com/rakshasa/rtorrent/wiki/TODO)
 
 ## Download Links
 
@@ -40,6 +65,9 @@ rTorrent client uses ncurses and is ideal for use with [tmux](https://tmux.githu
 
 **[All Versions](http://rtorrent.net/downloads/)**
 
+## Install
+
+See [Installing](https://github.com/rakshasa/rtorrent/wiki/Installing) WIKI page for more information.
 
 ## Packages
 
