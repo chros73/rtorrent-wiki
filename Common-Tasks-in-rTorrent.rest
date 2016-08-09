@@ -3,7 +3,7 @@ Common Tasks in rTorrent for Dummies
 
 This page is for showing examples on how to use the many options in rTorrent. Only real examples you can apply immediately, no theory at all.
 
-(Source: http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks)
+(Source: old trac `RTorrentCommonTasks <http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks>`_ WIKI page.)
 
 .. contents:: **Contents**
 
@@ -33,16 +33,7 @@ Saving torrent state and resume data between sessions
 Watch a directory for torrents
 ------------
 
-.. code-block::
-
-   # Watch a directory for new torrents, restart torrents that have been
-   # copied back and stop those that have been deleted.
-   schedule2 = watch_directory,10,10,load.start=~/Download/watch/*.torrent
-   schedule2 = tied_directory,10,10,start_tied=
-   schedule2 = untied_directory,10,10,close_untied=
-   
-   # Watch another directory with a different destination. (0.7.7+)
-   schedule2 = watch_directory_2,10,10,"load.start=~/Download/watch_stuff/*.torrent, d.directory.set=~/Download/stuff/"
+See `Watch directories <https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories>`_ WIKI page for more information.
 
 
 Create symbolic links to indicate the download state
@@ -122,7 +113,7 @@ Assuming you have a working mail system and this 'rtorrent_mail.sh' script is ex
 Stop torrents after reaching a specified upload ratio
 ------------
 
-See `Ratio Handling <https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling>`_ page for more information.
+See `Ratio Handling <https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling>`_ WIKI page for more information.
 
 
 Delete data files when removing incomplete downloads
@@ -235,14 +226,13 @@ Set the priority of all the files of a torrent to off, either manually or by run
 Favoring one group of torrents over the rest of them
 ------------
 
-See its own `WIKI page <https://github.com/rakshasa/rtorrent/wiki/Favoring-group-of-torrents>`_.
-
+See `Favoring group of torrents <https://github.com/rakshasa/rtorrent/wiki/Favoring-group-of-torrents>`_ WIKI page for more information.
 
 
 Auto-Scraping
 ------------
 
-See its own `WIKI page <https://github.com/rakshasa/rtorrent/wiki/Auto-Scraping>`_.
+See `Auto-Scraping <https://github.com/rakshasa/rtorrent/wiki/Auto-Scraping>`_ WIKI page for more information.
 
 
 Adding fast resume data to torrent files
