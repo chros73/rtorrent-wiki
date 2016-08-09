@@ -3,7 +3,7 @@ Common Tasks in rTorrent for Dummies
 
 This page is for showing examples on how to use the many options in rTorrent. Only real examples you can apply immediately, no theory at all.
 
-(Source: http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks , missing points: Adding fast resume data to torrent files , Starting rTorrent on System Startup)
+(Source: http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks)
 
 .. contents:: **Contents**
 
@@ -220,3 +220,78 @@ On the "main" view ``^x`` + ``d.multicall2=main,d.start=``.
 
 Replace ``d.start=`` with ``d.stop=`` to stop all torrents .
 
+
+Stop downloading of a torrent but still uploading it
+------------
+
+Set the priority of all the files of a torrent to off, either manually or by running these commands in rtorrent with ``^x`` after selecting a torrent:
+
+.. code-block::
+
+   f.multicall=*,f.priority.set=0
+   d.update_priorities=
+
+
+Favoring one group of torrents over the rest of them
+------------
+
+See its own `WIKI page <https://github.com/rakshasa/rtorrent/wiki/Favoring-group-of-torrents>`_.
+
+
+
+Auto-Scraping
+------------
+
+See its own `WIKI page <https://github.com/rakshasa/rtorrent/wiki/Auto-Scraping>`_.
+
+
+Adding fast resume data to torrent files
+------------
+
+When you are the first seeder for a torrent, rTorrent will normally have to hash-check all files even if you just created the torrent file from them and thus know that they are correct. To eliminate this step, the following Perl script by Josef Drexler can add rTorrent's fast resume data to the torrent file: `rtorrent_fast_resume.pl <https://github.com/rakshasa/rtorrent/blob/master/doc/rtorrent_fast_resume.pl>`_.
+
+Usage:
+
+.. code-block::
+
+   $ rtorrent_fast_resume.pl [base-directory] < plain.torrent > with_fast_resume.torrent
+
+or
+
+.. code-block::
+
+   $ rtorrent_fast_resume.pl [base-directory] plain.torrent [with_fast_resume.torrent]
+
+Then you can distribute the original torrent file and load the modified file into rTorrent and start seeding without needing a hash check. The base directory specifies where the files in the torrent are located, equivalent to the "directory" option in ``rtorrent.rc``. If not specified, the files are assumed to be in the current directory.
+
+Note that this script requires the ``Convert::Bencode_XS`` module from CPAN, if this module is not available on your system you will need to install it first:
+
+.. code-block::
+
+   $ perl -MCPAN -e 'install Convert::Bencode_XS'
+
+
+Starting rTorrent on System Startup
+------------
+
+Debian
+^^^^^^
+
+Assuming a Debian-based distribution, create ``/etc/init.d/rtorrent`` with one of the rtorrentInit files (`rtorrentInit.sh <http://web.archive.org/web/20140219194435/http://libtorrent.rakshasa.no/attachment/wiki/RTorrentCommonTasks/rtorrentInit.sh>`_ , `rtorrentInit.bash <http://web.archive.org/web/20140220151435/http://libtorrent.rakshasa.no/attachment/wiki/RTorrentCommonTasks/rtorrentInit.bash>`_), editing the Configuration to suit your needs. 
+
+Make sure it has appropriate permissions and update your init system (as sudo/su/root):
+
+.. code-block::
+
+   # chown root:root /etc/init.d/rtorrent
+   # chmod 755 /etc/init.d/rtorrent
+   # update-rc.d rtorrent defaults
+
+Gentoo
+^^^^^^
+
+Assuming a Gentoo distribution, and having the **daemon** USE flag enabled ; select the user you want rtorrent to be runned as modifying ``/etc/conf.d/rtorrentd``, and update your init system (as sudo/su/root):
+
+.. code-block::
+
+   # rc-update add rtorrentd default
