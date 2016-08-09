@@ -122,7 +122,7 @@ Assuming you have a working mail system and this 'rtorrent_mail.sh' script is ex
 Stop torrents after reaching a specified upload ratio
 ------------
 
-See [Ratio Handling](https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling) page for more information.
+See `Ratio Handling <https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling>`_ page for more information.
 
 
 Delete data files when removing incomplete downloads
