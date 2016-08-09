@@ -102,6 +102,6 @@ This is not the same "libtorrent" project as the one found on SourceForge.
 
 Feel free to add content as I'm probably not going to write much ATM. Some kind of user guide would be really nice. By committing tickets, wiki changes, etc. you agree to license them under the GNU GPL. Remember to add a short comment describing the changes.
 
-This project is developed by Jari Sundell, "Rakshasa", a former student of computer science, math and Japanese at the University of Oslo. He can be reached on [sundell.software@gmail.com](mailto:sundell.software@gmail.com), also an unofficial help channel may be found at `#rtorrent@irc.freenode.net` which should be used for user-support.
+This project is developed by Jari Sundell, "Rakshasa", a former student of computer science, math and Japanese at the University of Oslo. He can be reached on [sundell.software@gmail.com](mailto:sundell.software@gmail.com), also an unofficial help channel may be found at `##rtorrent@irc.freenode.net` which should be used for user-support.
 
 If you didn't get a reply to a mail sent to this address, it may either mean he is busy, has a rather full inbox or that should have searched the internet first.
