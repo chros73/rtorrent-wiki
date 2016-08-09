@@ -8,8 +8,8 @@
    * [No symbol information in backtraces](#no-symbol-information-in-backtraces)
    * [Error checking signedness of mincore parameter](#error-checking-signedness-of-mincore-parameter)
    * [Syntax error when running ./configure](#syntax-error-when-running-configure)
-   * [LibTorrent not found by ./configure](#libtorrent-not-found-by-configure)
-   * [LibTorrent version not detected by ./configure](#libtorrent-version-not-detected-by-configure)
+   * [libTorrent not found by ./configure](#libtorrent-not-found-by-configure)
+   * [libTorrent version not detected by ./configure](#libtorrent-version-not-detected-by-configure)
    * [Compilation on Centos](#compilation-on-centos)
 
 
@@ -79,7 +79,7 @@ In most cases this error message is very misleading and indicates a general inab
  * Run configure again
 
 
-## LibTorrent not found by ./configure
+## libTorrent not found by ./configure
 
 ```
 checking for STUFF... configure: error: Package requirements (sigc++-2.0 libcurl >= 7.12.0 libtorrent >= 0.11.8) were not met: 
@@ -99,7 +99,7 @@ If this message persists even with libtorrent installed, pkg-config cannot find 
 Then run configure again.
 
 
-## LibTorrent version not detected by ./configure
+## libTorrent version not detected by ./configure
 
 ```
 checking for STUFF... configure: error: Package requirements (sigc++-2.0 libcurl >= 7.12.0 libtorrent >= 0.12.0) were not met:
