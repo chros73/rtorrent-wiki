@@ -267,7 +267,7 @@ Starting rTorrent on System Startup
 Debian
 ^^^^^^
 
-Assuming a Debian-based distribution, create ``/etc/init.d/rtorrent`` with one of the rtorrentInit files (`rtorrentInit.sh <http://web.archive.org/web/20140219194435/http://libtorrent.rakshasa.no/attachment/wiki/RTorrentCommonTasks/rtorrentInit.sh>`_ , `rtorrentInit.bash <http://web.archive.org/web/20140220151435/http://libtorrent.rakshasa.no/attachment/wiki/RTorrentCommonTasks/rtorrentInit.bash>`_), editing the Configuration to suit your needs. 
+Assuming a Debian-based distribution, create ``/etc/init.d/rtorrent`` with one of the rtorrentInit files (`rtorrentInit.sh <http://web.archive.org/web/20140219194435/http://libtorrent.rakshasa.no/raw-attachment/wiki/RTorrentCommonTasks/rtorrentInit.sh>`_ , `rtorrentInit.bash <http://web.archive.org/web/20140220151435/http://libtorrent.rakshasa.no/raw-attachment/wiki/RTorrentCommonTasks/rtorrentInit.bash>`_), editing the Configuration to suit your needs. 
 
 Make sure it has appropriate permissions and update your init system (as sudo/su/root):
 
