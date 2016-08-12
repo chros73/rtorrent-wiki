@@ -104,4 +104,4 @@ Feel free to add content as I'm probably not going to write much ATM. Some kind 
 
 This project is developed by Jari Sundell, "Rakshasa", a former student of computer science, math and Japanese at the University of Oslo. He can be reached on [sundell.software@gmail.com](mailto:sundell.software@gmail.com), also an unofficial help channel may be found at `##rtorrent@irc.freenode.net` which should be used for user-support.
 
-If you didn't get a reply to a mail sent to this address, it may either mean he is busy, has a rather full inbox or that should have searched the internet first.
+If you didn't get a reply to a mail sent to this address, it may either mean he is busy, has a rather full inbox or that you should have searched the internet first.
