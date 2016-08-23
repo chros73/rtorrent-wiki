@@ -184,9 +184,17 @@ Large `fd_set`'s cause a performance penalty as they must be cleared each time t
 
 #### Disk allocation
 
-`system.file.allocate` specifies whether to allocate disk space for a new torrent. Default is `0`. It's suggested to leave it off: it reduce disk usage when a torrent is added.
+`system.file.allocate` specifies whether to allocate disk space for a new torrent. Default is `0`.
 
-Opening a torrent causes files to be created and resized with `ftruncate` (`ftruncate` has problem on vfat filesystem, though.) This does not actually use disk space until data is written, despite what the file sizes are reported as. Use `du` without the flag `--apparent-size` to see the real disk usage.
+Why would you care about this setting? Because "it’s beneficial in the as-less-fragmentation-as-possible sense".
+
+When it's enabled (set to `1`):
+- on a non-blocking file system that supports `fallocate` (like btrfs, ext4, ocfs2, xfs) that is used to resize files, hence there is no performance issue
+- if `fallocate` isn't supported by a blocking file system and `--with-posix-fallocate` was used during compilation of `libtorrent` then that is used to resize files, it can be [slower](https://log.amitshah.net/2009/03/comparison-of-file-systems-and-speeding-up-applications/) then the above one
+- on Mac OS X a different method is used
+
+When it's disabled (set to `0`):
+- opening a torrent causes files to be created and resized with `ftruncate` (`ftruncate` has problem on vfat filesystem, though.) This does not actually use disk space until data is written, despite what the file sizes are reported as. Use `du` without the flag `--apparent-size` to see the real disk usage.
 
 #### Session save
 
