@@ -188,13 +188,17 @@ Large `fd_set`'s cause a performance penalty as they must be cleared each time t
 
 Why would you care about this setting? Because "it’s beneficial in the as-less-fragmentation-as-possible sense".
 
+In short: if you use btrfs, ext4, ocfs2, xfs file system you can enable this without having any performance impact.
+
 When it's enabled (set to `1`):
-- on a non-blocking file system that supports `fallocate` (like btrfs, ext4, ocfs2, xfs) that is used to resize files, hence there is no performance issue
-- if `fallocate` isn't supported by a blocking file system and `--with-posix-fallocate` was used during compilation of `libtorrent` then that is used to resize files, it can be [slower](https://log.amitshah.net/2009/03/comparison-of-file-systems-and-speeding-up-applications/) then the above one
+- on a non-blocking file system that supports `fallocate` (like btrfs, ext4, ocfs2, xfs) that is always used to resize files, hence there is no performance issue (takes only a few microseconds to allocate space for huge files)
+- if `fallocate` isn't supported by a blocking file system and `--with-posix-fallocate` was used during compilation of `libtorrent` then that is used to resize files, it can be [significantly slower](https://log.amitshah.net/2009/03/comparison-of-file-systems-and-speeding-up-applications/) then the above one
 - on Mac OS X a different method is used
+- if none of the above method is available then rtorrent falls back to disabled state, even when it's set to `1`
+- if priority of certain files of a download are set to `off` before starting it then file allocation isn't triggered for them
 
 When it's disabled (set to `0`):
-- opening a torrent causes files to be created and resized with `ftruncate` (`ftruncate` has problem on vfat filesystem, though.) This does not actually use disk space until data is written, despite what the file sizes are reported as. Use `du` without the flag `--apparent-size` to see the real disk usage.
+- Opening a torrent causes files to be created and resized with `ftruncate` (`ftruncate` has problem on vfat filesystem, though, so another method is used in this case). This does not actually use disk space until data is written, despite what the file sizes are reported as. Use `du` without the flag `--apparent-size` to see the real disk usage.
 
 #### Session save
 
