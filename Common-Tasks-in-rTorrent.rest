@@ -293,7 +293,7 @@ Make sure you have tmux installed (tmux instead of screen):
 
     $ sudo atp-get update; sudo apt-get install tmux
 
-Create the following file:
+Create the following file (as sudo/root at location: /etc/systemd/system/rtorrent.service) 
 
 .. code-block::
 
