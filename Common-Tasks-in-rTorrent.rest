@@ -281,3 +281,38 @@ Assuming a Gentoo distribution, and having the **daemon** USE flag enabled ; sel
 .. code-block::
 
    # rc-update add rtorrentd default
+
+Ubuntu 16.04 (with systemd)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Older systems will use the service command with screen to utilise a startup file, typically located in (or symlinked to) /etc/init.d/ however the new systemctl command requires a different format.
+
+Make sure you have tmux installed (tmux instead of screen):
+
+.. code-block::
+
+    $ sudo atp-get update; sudo apt-get install tmux
+
+Create the following file:
+
+.. code-block::
+
+    [Unit]
+    Description=rtorrent (in tmux)
+
+    [Service]
+    Type=oneshot
+    RemainAfterExit=yes
+    User=YOUR_USER_ID_WHICH_RUNS_RTORRENT_GOES_HERE
+    ExecStart=/usr/bin/tmux -2 new-session -d -s rtorrent rtorrent
+    ExecStop=/usr/bin/tmux kill-session -t rtorrent
+
+    [Install]
+    WantedBy=default.target
+
+After that, you will need to then enable and start the service:
+
+.. code-block::
+
+    $ sudo systemctl enable rtorrent.service
+    $ sudo systemctl start rtorrent.service
