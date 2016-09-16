@@ -291,9 +291,9 @@ Make sure you have tmux installed (tmux instead of screen):
 
 .. code-block::
 
-    $ sudo atp-get update; sudo apt-get install tmux
+    $ sudo apt-get update; sudo apt-get install tmux
 
-Create the following file (as sudo/root at location: /etc/systemd/system/rtorrent.service) 
+Create the following file (with sudo/root permission at this location:) /etc/systemd/system/rtorrent.service 
 
 .. code-block::
 
