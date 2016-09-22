@@ -49,7 +49,7 @@ rTorrent client uses ncurses and is ideal for use with [tmux](https://tmux.githu
   * [RPC Option Strings](https://github.com/rakshasa/rtorrent/wiki/RPC-Option-Strings)
   * [RPC Setup XMLRPC](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
   * [RPC Utility XMLRPC2SCGI](https://github.com/rakshasa/rtorrent/wiki/RPC-Utility-XMLRPC2SCGI)
-
+ * the [Vagrant](https://github.com/rakshasa/rtorrent/wiki/Vagrant) repository allows easy creation of a test environment for the client.
 
 ## Other Information
 
