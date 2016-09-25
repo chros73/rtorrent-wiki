@@ -65,6 +65,8 @@ When the torrent finishes, it executes ``mv <base_path> ~/Download/`` and then s
 
 .. code-block::
 
+   # gets the full path of data of a torrent (it's a workaround for the possibly empty 'd.base_path' attribute)
+   method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
    method.set_key = event.download.finished,move_complete,"execute=mv,-u,$d.get_data_full_path=,~/Download/; d.directory.set=~/Download/"
 
 
@@ -78,6 +80,8 @@ Each watch directory adds torrents with the final destination stored in the ``cu
    schedule2 = watch_directory_1,10,10,"load.start=~/Download/watch_stuff1/*.torrent,d.custom1.set=~/Download/stuff1/"
    schedule2 = watch_directory_2,10,10,"load.start=~/Download/watch_stuff2/*.torrent,d.custom1.set=~/Download/stuff2/"
    
+   # gets the full path of data of a torrent (it's a workaround for the possibly empty 'd.base_path' attribute)
+   method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
    # On completion, move the torrent to the directory from custom1.
    method.set_key =event.download.finished,move_complete,"d.directory.set=$d.custom1= ;execute=mv,-u,$d.get_data_full_path=,$d.custom1="
 
@@ -131,6 +135,8 @@ If you often add older torrents and find that they never complete due to lack of
    # Clear 'custom2' when download completes.
    method.set_key = event.download.finished,set_done_var,d.custom2.set=
    
+   # gets the full path of data of a torrent (it's a workaround for the possibly empty 'd.base_path' attribute)
+   method.insert = d.get_data_full_path, simple, "branch=((d.is_multi_file)),((cat,(d.directory))),((cat,(d.directory),/,(d.name)))"
    # Erase data files when a download is removed that still has 'custom2' set.
    method.set_key = event.download.erased,rm_files,"branch=d.custom2=,\"execute={rm,-rf,--,$d.get_data_full_path=}\""
 
