@@ -1,7 +1,7 @@
 Utility XMLRPC2SCGI
 ===================
 
-* http://libtorrent.rakshasa.no/downloads/xmlrpc2scgi.py
+* https://github.com/rakshasa/rtorrent-vagrant/blob/master/scripts/xmlrpc2scgi.py
 
 Synopsis
 --------
