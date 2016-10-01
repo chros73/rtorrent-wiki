@@ -271,7 +271,7 @@ RE = Remote client information, has two parts; the first is u or c and the secon
 &nbsp;&nbsp;&nbsp;&nbsp;i = This peer is interested in downloading from your client.  
 &nbsp;&nbsp;&nbsp;&nbsp;n = This peer is not interested in downloading from your client. 
 
-LO = Local client information, has two parts; the first is u or c and the second is i or n.  
+&nbsp;&nbsp;&nbsp;&nbsp;LO = Local client information, has two parts; the first is u or c and the second is i or n.  
 &nbsp;&nbsp;&nbsp;&nbsp;c = Your client has choked this peer (which means it is not going to send this peer any pieces for now).  
 &nbsp;&nbsp;&nbsp;&nbsp;u = Your client is not choking the peer (unchoked).  
 &nbsp;&nbsp;&nbsp;&nbsp;i = Your client is interested in downloading from this peer.  
