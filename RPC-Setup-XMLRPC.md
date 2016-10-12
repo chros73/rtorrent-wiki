@@ -2,16 +2,20 @@
 
 What you need:
 
-* http://python.ca/scgi/ for Apache, Lighttpd should have this built-in.
+* http://python.ca/scgi/ for Apache 2.2, mod_proxy_scgi enabled for Apache 2.4, Lighttpd should have this built-in.
 * http://xmlrpc-c.sourceforge.net/ 1.00 or later, 1.07 or later for 64bit integer support.
 
 Configure rtorrent with the `--with-xmlrpc-c` flag. Then add appropriate configuration, according used web-server.
 
 ### Apache
 
-**httpd.conf**:
+**httpd.conf (2.2)**:
 ```ini
 SCGIMount /RPC2 127.0.0.1:5000
+```
+**httpd.conf (2.4)**:
+```ini
+ProxyPass /RPC2 scgi://127.0.0.1:5000
 ```
 
 **rtorrent.rc**:
