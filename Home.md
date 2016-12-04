@@ -73,14 +73,13 @@ See [Installing](https://github.com/rakshasa/rtorrent/wiki/Installing) WIKI page
 
 rTorrent and libTorrent packages are both available for the following Operating Systems and Distributions:
 
- * [Debian](https://www.debian.org/) : in Debian testing/unstable: `apt-get install rtorrent`.
+ * [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com) : `apt-get install rtorrent`.
  * [Fedora](https://fedoraproject.org/wiki/Fedora_Project_Wiki) : Run `yum install rtorrent` or `yum install libtorrent` to install (it's in Fedora Extra's)
  * [Gentoo](https://gentoo.org/) : in Portage; see latest version on [libTorrent](https://packages.gentoo.org/packages/net-libs/libtorrent) and [rTorrent](https://packages.gentoo.org/packages/net-p2p/rtorrent). 
  * [Mandriva Linux](https://en.wikipedia.org/wiki/Mandriva_Linux) : the latest packages are available from the Cooker contribs.
  * [SUSE Linux](http://suse.com/) : latest packages available from Packman for [libTorrent](http://packman.links2linux.de/package/libtorrent) and [rTorrent](http://packman.links2linux.de/package/rtorrent). 
- * [Ubuntu](http://www.ubuntu.com/) : in Ubuntu Dapper; see latest version on [libTorrent](http://packages.ubuntu.com/search?keywords=libtorrent19&searchon=names&suite=all&section=all) and [rTorrent](http://packages.ubuntu.com/search?keywords=rtorrent&searchon=names&suite=all&section=all)
 
- * [ArchLinux](https://www.archlinux.org/) : in the Arch User-community Repository; see latest version on  [libTorrent](https://www.archlinux.org/packages/?q=libtorrent) and [rTorrent](https://www.archlinux.org/packages/?sort=&q=rtorrent&maintainer=&flagged=).
+ * [ArchLinux](https://www.archlinux.org/) : The latest packages are available by installing with `pacman -S rtorrent`
  * [Crux](https://crux.nu/) : in the [Crux Ports DB](https://crux.nu/portdb/?command=viewport&name=libtorrent&repo=contrib); see latest version on [libTorrent](https://crux.nu/gitweb/?p=ports/contrib.git;a=tree;f=libtorrent) and [rTorrent](https://crux.nu/gitweb/?p=ports/contrib.git;a=tree;f=rtorrent).
  * [Lunar-Linux](http://www.lunar-linux.org/) : in the moonbase; to install just `lin rtorrent`
  * [Sourcemage GNU/Linux](http://sourcemage.org/) : do a `cast rtorrent` or `cast libtorrent`
