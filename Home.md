@@ -15,7 +15,7 @@ rTorrent client uses ncurses and is ideal for use with [tmux](https://tmux.githu
  * [User's Manual](#users-manual)
  * [Other Information](#other-information)
  * [Download Links](#download-links)
- * [Install](#Install)
+ * [Install](#install)
  * [Packages](#packages)
  * [Disclaimer](#disclaimer)
  * [Stuff](#stuff)
