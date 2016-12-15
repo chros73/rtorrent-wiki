@@ -10,9 +10,9 @@ Scheduled Task
 --------------
 
 ```
-schedule = watch_directory_foo, 10, 10, "load.start=~/watch_foo/*.torrent"
-schedule = watch_directory_bar, 10, 10, "load.normal=~/watch_bar/*.torrent"
-schedule = watch_directory_baz, 10, 10, "load.normal=~/watch_baz/*.torrent,d.directory.set=~/baz/"
+schedule = watch_directory_foo, 20, 10, "load.start=~/watch_foo/*.torrent"
+schedule = watch_directory_bar, 21, 10, "load.normal=~/watch_bar/*.torrent"
+schedule = watch_directory_baz, 22, 10, "load.normal=~/watch_baz/*.torrent,d.directory.set=~/baz/"
 ```
 
 The simplest and most portable way to start downloads is through scheduling a task for regular execution.
@@ -21,8 +21,11 @@ Tied Files
 ----------
 
 ```
+# Either use this…
 schedule = tied_directory, 10, 10, start_tied=
 schedule = untied_directory, 10, 10, stop_untied=
+
+# OR one of these, the combination does not make sense
 schedule = untied_directory, 10, 10, close_untied=
 schedule = untied_directory, 10, 10, remove_untied=
 ```
