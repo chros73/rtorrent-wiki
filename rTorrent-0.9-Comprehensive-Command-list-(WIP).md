@@ -379,7 +379,7 @@ Many variables can also be used as commands, however commands are not intended t
 | `d.uploads_max` | `d.get_uploads_max` | | Variable |
 | `d.uploads_max.set` | `d.set_uploads_max` | | Command |
 
-### Torrents
+### Trackers
 | Command | Deprecated Commands | Description | Type |
 | ------- | ------------------- | ----------- | ---- |
 | `t.group` | `t.get_group` | | Variable |
