@@ -73,8 +73,8 @@ See [Installing](https://github.com/rakshasa/rtorrent/wiki/Installing) WIKI page
 
 rTorrent and libTorrent packages are both available for the following Operating Systems and Distributions:
 
- * [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com) : `apt-get install rtorrent`.
- * [Fedora](https://fedoraproject.org/wiki/Fedora_Project_Wiki) : Run `yum install rtorrent` or `yum install libtorrent` to install (it's in Fedora Extra's)
+ * [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com) : Run `apt-get install rtorrent`.
+ * [Fedora](https://fedoraproject.org/wiki/Fedora_Project_Wiki) : Run `dnf install rtorrent`.
  * [Gentoo](https://gentoo.org/) : in Portage; see latest version on [libTorrent](https://packages.gentoo.org/packages/net-libs/libtorrent) and [rTorrent](https://packages.gentoo.org/packages/net-p2p/rtorrent). 
  * [Mandriva Linux](https://en.wikipedia.org/wiki/Mandriva_Linux) : the latest packages are available from the Cooker contribs.
  * [SUSE Linux](http://suse.com/) : latest packages available from Packman for [libTorrent](http://packman.links2linux.de/package/libtorrent) and [rTorrent](http://packman.links2linux.de/package/rtorrent). 
