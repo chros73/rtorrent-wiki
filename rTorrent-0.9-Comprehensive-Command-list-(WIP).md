@@ -397,20 +397,20 @@ Many variables can also be used as commands, however commands are not intended t
 ### Files
 | Command | Deprecated Commands | Description | Type |
 | ------- | ------------------- | ----------- | ---- |
-| `f.completed_chunks` | `f.get_completed_chunks` | | Variable |
+| `f.completed_chunks` | `f.get_completed_chunks` | Get the chunks that already downloaded | Variable |
 | `f.frozen_path` | `f.get_frozen_path` | | Variable |
-| `f.last_touched` | `f.get_last_touched` | | Variable |
+| `f.last_touched` | `f.get_last_touched` | Last time the file was touched in seconds since 1970 | Variable |
 | `f.match_depth_next` | `f.get_match_depth_next` | | Variable |
 | `f.match_depth_prev` | `f.get_match_depth_prev` | | Variable |
 | `f.offset` | `f.get_offset` | | Variable |
 | `f.path` | `f.get_path` | | Variable |
 | `f.path_components` | `f.get_path_components` | | Variable |
 | `f.path_depth` | `f.get_path_depth` | | Variable |
-| `f.priority` | `f.get_priority` | | Variable |
-| `f.range_first` | `f.get_range_first` | | Variable |
-| `f.range_second` | `f.get_range_second` | | Variable |
-| `f.size_bytes` | `f.get_size_bytes` | | Variable |
-| `f.size_chunks` | `f.get_size_chunks` | | Variable |
+| `f.priority` | `f.get_priority` | Get the priority (0=do not download, 1=normal, 2=high) | Variable |
+| `f.range_first` | `f.get_range_first` | Get the chunk range start| Variable |
+| `f.range_second` | `f.get_range_second` | Get the chunk range end | Variable |
+| `f.size_bytes` | `f.get_size_bytes` | Get the size of the file in bytes | Variable |
+| `f.size_chunks` | `f.get_size_chunks` | Get the size of the file in chunks | Variable |
 | `f.priority.set` | `f.set_priority` | | Variable |
 | `fi.filename_last` | `fi.get_filename_last` | | Variable |
 
