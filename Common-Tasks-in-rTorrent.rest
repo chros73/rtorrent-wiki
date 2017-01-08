@@ -217,6 +217,9 @@ On the "main" view ``^x`` + ``d.multicall2=main,d.start=``.
 
 Replace ``d.start=`` with ``d.stop=`` to stop all torrents .
 
+In case you need to stop all torrents but can't start rTorrent to run the above command, you can edit the sessions files with the following command, inside the session dir, which you of course have set up.
+
+sed -i 's/5:statei1e/5:statei0e/' *.torrent.rtorrent
 
 Stop downloading of a torrent but still uploading it
 ------------
