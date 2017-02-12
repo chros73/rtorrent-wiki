@@ -92,3 +92,9 @@ Note that this causes all DHT packets to have a state of `UNTRACKED`, keep that 
 == Troubleshooting
 === UFW/iptables blocking innocent packets when DHT enabled
 See http://www.linuxquestions.org/questions/linux-networking-3/why-is-ufw-iptables-blocking-packets-it-shouldn%27t-be-4175500239/
+
+=== Segmentation faults
+
+Some users experience segmentation faults when running over a thousand torrents with DHT enabled. This might have to do with the volume of DHT queries and/or the networking resources available, see issue #294 and issue #534.
+
+A possible workaround, other than disabling DHT, is to clear the session directory.
