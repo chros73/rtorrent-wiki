@@ -33,7 +33,7 @@ These nodes are automatically added to the initial contact list for bootstrappin
 2. Downloading a torrent with peers who advertise that they support DHT. +
 At the moment, of the popular clients this is only supported by the official Bittorrent client version 5 or higher and the latest uTorrent versions (1.7.4+). When you connect to such a client via a normal tracker, rtorrent will automatically attempt to contact its DHT node and bootstrap from it. While other clients may also support DHT, they do not advertise this in the BT handshake and thus cannot be contacted in this way.
 3. Manually entering a host name and port number of a DHT node. +
-If you know host name/IP and port of a DHT node, you can enter it manually with the command `dht.add_node=host:port`. This command only adds the node to the routing table if there is space for it.
+If you know host name/IP and port of a DHT node, you can enter it manually with the command `dht.add_node=host:port`. This command only adds the node to the routing table if there is space for it. Example: `dht.add_node = dht.transmissionbt.com` (this it the node used by Transmission for bootstrap).
 
 After finding the first responsive DHT node, rtorrent will bootstrap its DHT routing table from it. When this is complete, you will see the log message `DHT bootstrap complete, have ## nodes in ## buckets.` From this point on DHT is usable for announces. The DHT routing table is cached in the session directory so the bootstrap process only needs to happen the first time you use DHT.
 
