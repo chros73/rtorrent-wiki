@@ -243,6 +243,8 @@ net.ipv4.tcp_wmem = 4096 12582912 16777216
 # Increase the read-buffer-space allocatable: min 4KB, def 12MB, max 16MB. Default: 4096 16384 4194304
 net.ipv4.tcp_rmem = 4096 12582912 16777216
 
+# WARNING: none of the following options exists as of rtorrent 0.9.2-1
+
 # Tells the system whether it should start at the default window size only for new TCP connections or also for existing TCP connections that have been idle for too long. Default: 1
 net.ipv4.tcp_slow_start_after_idle = 0
 # Allow reuse of sockets in TIME_WAIT state for new connections only when it is safe from the network stack’s perspective. Default: 0
