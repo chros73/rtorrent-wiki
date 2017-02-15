@@ -295,7 +295,7 @@ This field has a * in it when your client is snubbing this peer. When a peer agr
 
 A status line in this screen lists information such as:
 ```
-Peers: 99(1002) Min/Max: 40/100 Uploads: 15 U/I/C/A: 3/71/5/3 Failed: 0
+Peers: 99(1002) Min/Max: 40/100 Uploads: 15 U/I/C/A: 3/71/5/3 Unchoked: 2/1 Failed: 0
 ```
 **Peers**  
      The amount of peers you are connected and (not connected) to.
@@ -311,6 +311,9 @@ U = Number of corrently unchoked peers
 I = Currently interested peers  
 C = Complete peers  
 A = Peers accounted  
+
+**Unchoked**  
+     Number of unchoked peers for upload / download.
 
 **Failed**  
 Number of failed chunks.
