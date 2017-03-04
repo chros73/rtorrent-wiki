@@ -224,12 +224,13 @@ sed -i 's/5:statei1e/5:statei0e/' *.torrent.rtorrent
 Stop downloading of a torrent but still uploading it
 ------------
 
-Set the priority of all the files of a torrent to off, either manually or by running these commands in rtorrent with ``^x`` after selecting a torrent:
+Set the priority of all unfinished files (or all the files) of a torrent to off, either manually (you still have to run the last command) or by running these commands in rtorrent with ``^x`` after selecting a torrent:
 
 .. code-block::
 
    f.multicall=*,f.priority.set=0
    d.update_priorities=
+   d.disconnect.seeders=
 
 
 Favoring one group of torrents over the rest of them
