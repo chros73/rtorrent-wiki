@@ -7,7 +7,7 @@
 ---: | :---
 
 
-The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux](https://tmux.github.io/), [screen](http://www.gnu.org/software/screen/) or  [dtach](http://dtach.sourceforge.net/). Alternatively, version 0.9.7+ has a built-in daemon mode disabling the user interface, so you can only control it via XMLRPC. It supports saving of sessions, allows the user to add/remove torrents, and much more.
+The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux](https://tmux.github.io/), [screen](http://www.gnu.org/software/screen/) or  [dtach](http://dtach.sourceforge.net/). Alternatively, version 0.9.7+ has a [built-in daemon mode](https://github.com/rakshasa/rtorrent/wiki/Daemon_Mode) disabling the user interface, so you can only control it via XMLRPC. It supports saving of sessions, allows the user to add/remove torrents, and much more.
 
 
 **Contents**
