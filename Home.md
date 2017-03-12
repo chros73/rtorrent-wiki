@@ -94,7 +94,9 @@ Please report any package related problems to the package maintainers. Listing o
 
 ## Disclaimer
 
-This is not the same "libtorrent" project as the one found on SourceForge.
+This is not the same ``libtorrent`` project as the one used by *Deluge* and some other clients.
+If you want to be precise and avoid confusion, refer to *this project's*
+library as ``libtorrent-rakshasa``, and the other one's as ``libtorrent-rasterbar``.
 
 
 ## Stuff
