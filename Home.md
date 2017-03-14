@@ -3,11 +3,11 @@
 [![Travis CI](https://api.travis-ci.org/rakshasa/rtorrent.png?branch=master)](https://travis-ci.org/rakshasa/rtorrent)
 [![Download](http://img.shields.io/badge/download-v0.9.6-0000ff.svg)](https://github.com/rakshasa/rtorrent/wiki#download-links)
 
-:busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink: The [TODO](https://github.com/rakshasa/rtorrent/wiki/TODO) page has a list of pending work items.
+:busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink: The [[TODO]] page has a list of pending work items.
 ---: | :---
 
 
-The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux](https://tmux.github.io/), [screen](http://www.gnu.org/software/screen/) or  [dtach](http://dtach.sourceforge.net/). Alternatively, version 0.9.7+ has a [built-in daemon mode](https://github.com/rakshasa/rtorrent/wiki/Daemon_Mode) disabling the user interface, so you can only control it via XMLRPC. It supports saving of sessions, allows the user to add/remove torrents, and much more.
+The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux](https://tmux.github.io/), [screen](http://www.gnu.org/software/screen/) or  [dtach](http://dtach.sourceforge.net/). Alternatively, version 0.9.7+ has a [[built-in daemon mode|Daemon_Mode]] disabling the user interface, so you can only control it via XMLRPC. It supports saving of sessions, allows the user to add/remove torrents, and much more.
 
 
 **Contents**
@@ -15,46 +15,48 @@ The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux]
  * [User's Manual](#users-manual)
  * [Other Information](#other-information)
  * [Download Links](#download-links)
- * [Install](#install)
+ * [Installation](#installation)
  * [Packages](#packages)
  * [Disclaimer](#disclaimer)
  * [Stuff](#stuff)
 
 
 ## User's Manual
- * the [User Guide](https://github.com/rakshasa/rtorrent/wiki/User-Guide) explains how to use the ‘curses’ UI, and what the displayed information actually means.
- * the [Configuration Guide](https://github.com/rakshasa/rtorrent/wiki/Config-Guide) helps you to adapt rTorrent to serve your needs.
-   * [rTorrent Configuration Template](https://github.com/rakshasa/rtorrent/wiki/CONFIG-Template)
-   * [Watch Directories](https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories)
-   * [Ratio Handling](https://github.com/rakshasa/rtorrent/wiki/RTorrentRatioHandling)
-   * [Tor Proxying](https://github.com/rakshasa/rtorrent/wiki/Tor-based-Proxying-Guide)
-   * [Using DHT](https://github.com/rakshasa/rtorrent/wiki/Using-DHT)
-   * [Using XMLRPC with rTorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
-   * [Performance Tuning](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning)
-   * [Favoring one group of torrents over the rest of them](https://github.com/rakshasa/rtorrent/wiki/Favoring-group-of-torrents)
-   * [Auto-Scraping](https://github.com/rakshasa/rtorrent/wiki/Auto-Scraping)
-   * [Logging](https://github.com/rakshasa/rtorrent/wiki/LOG-Logging)
-   * [Migration to the 0.9.x command syntax](https://github.com/rakshasa/rtorrent/wiki/RPC-Migration-0.9)
-   * [Common Tasks in rTorrent](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent)
-   * [Choke Groups](https://github.com/rakshasa/rtorrent/wiki/Choke-Groups)
-   * [IP filtering](https://github.com/rakshasa/rtorrent/wiki/IP-filtering)
-   * [rTorrent 0.9 Comprehensive Command list](https://github.com/rakshasa/rtorrent/wiki/rTorrent-0.9-Comprehensive-Command-list-(WIP))
-   * [Using initial seeding](https://github.com/rakshasa/rtorrent/wiki/Using-initial-seeding)
- * the [Scripting Guide](https://github.com/rakshasa/rtorrent/wiki/Scripting-Guide) allows ‘power users’ to extend rTorrent's configuration with more complex logic, and control it remotely via XMLRPC.
-  * [COMMAND execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute)
-  * [COMMAND schedule](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling)
-  * [COMMAND system](https://github.com/rakshasa/rtorrent/wiki/COMMAND-System)
-  * [COMMAND ui](https://github.com/rakshasa/rtorrent/wiki/COMMAND-UserInterface)
-  * [RPC Migration 0.9](https://github.com/rakshasa/rtorrent/wiki/RPC-Migration-0.9)
-  * [RPC Option Strings](https://github.com/rakshasa/rtorrent/wiki/RPC-Option-Strings)
-  * [RPC Setup XMLRPC](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
-  * [RPC Utility XMLRPC2SCGI](https://github.com/rakshasa/rtorrent/wiki/RPC-Utility-XMLRPC2SCGI)
- * the [Vagrant](https://github.com/rakshasa/rtorrent/wiki/Vagrant) repository allows easy creation of a test environment for the client.
+ * the [[User Guide|User-Guide]] explains how to use the ‘curses’ UI, and what the displayed information actually means.
+ * the [[Configuration Guide|Config-Guide]] helps you to adapt rTorrent to serve your needs.
+   * [[rTorrent Configuration Template|CONFIG-Template]]
+   * [[Watch Directories|TORRENT-Watch-directories]]
+   * [[Ratio Handling|RTorrentRatioHandling]]
+   * [[Tor Proxying|Tor-based-Proxying-Guide]]
+   * [[Using DHT|Using-DHT]]
+   * [[Using XMLRPC with rTorrent|RPC-Setup-XMLRPC]]
+   * [[Performance Tuning|Performance-Tuning]]
+   * [[Favoring one group of torrents over the rest of them|Favoring-group-of-torrents]]
+   * [[Auto-Scraping|Auto-Scraping]]
+   * [[Logging|LOG-Logging]]
+   * [[Migration to the 0.9.x command syntax|RPC-Migration-0.9]]
+   * [[Common Tasks in rTorrent|Common-Tasks-in-rTorrent]]
+   * [[Choke Groups|Choke-Groups]]
+   * [[IP filtering|IP-filtering]]
+   * [[rTorrent 0.9 Comprehensive Command list|rTorrent-0.9-Comprehensive-Command-list-(WIP)]]
+   * [[Using initial seeding|Using-initial-seeding]]
+ * the [[Scripting Guide|Scripting-Guide]] allows ‘power users’ to extend rTorrent's configuration with more complex logic, and control it remotely via XMLRPC.
+   * [[COMMAND execute|COMMAND-Execute]]
+   * [[COMMAND schedule|COMMAND-Scheduling]]
+   * [[COMMAND system|COMMAND-System]]
+   * [[COMMAND ui|COMMAND-UserInterface]]
+   * [[RPC Migration 0.9|RPC-Migration-0.9]]
+   * [[RPC Option Strings|RPC-Option-Strings]]
+   * [[RPC Setup XMLRPC|RPC-Setup-XMLRPC]]
+   * [[RPC Utility XMLRPC2SCGI|RPC-Utility-XMLRPC2SCGI]]
+ * the [[Vagrant|Vagrant]] repository allows easy creation of a test environment for the client.
+
 
 ## Other Information
 
- * List of [Known Issues](https://github.com/rakshasa/rtorrent/wiki/Issues)
- * List of [Todos](https://github.com/rakshasa/rtorrent/wiki/TODO)
+ * List of [[Known Issues|Issues]]
+ * List of [[Todos|TODO]]
+
 
 ## Download Links
 
@@ -63,21 +65,25 @@ The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux]
  * http://rtorrent.net/downloads/libtorrent-0.13.6.tar.gz
  * http://rtorrent.net/downloads/rtorrent-0.9.6.tar.gz
 
-**[All Versions](http://rtorrent.net/downloads/)**
+**All Versions**
 
-## Install
+ * http://rtorrent.net/downloads/
 
-See [Installing](https://github.com/rakshasa/rtorrent/wiki/Installing) WIKI page for more information.
+
+## Installation
+
+See the [[Installing]] wiki page for more information.
+
 
 ## Packages
 
-rTorrent and libTorrent packages are both available for the following Operating Systems and Distributions:
+rTorrent and libTorrent packages are both available for the following operating systems and distributions:
 
  * [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com) : Run `apt-get install rtorrent`.
  * [Fedora](https://fedoraproject.org/wiki/Fedora_Project_Wiki) : Run `dnf install rtorrent`.
- * [Gentoo](https://gentoo.org/) : in Portage; see latest version on [libTorrent](https://packages.gentoo.org/packages/net-libs/libtorrent) and [rTorrent](https://packages.gentoo.org/packages/net-p2p/rtorrent). 
+ * [Gentoo](https://gentoo.org/) : in Portage; see latest version on [libTorrent](https://packages.gentoo.org/packages/net-libs/libtorrent) and [rTorrent](https://packages.gentoo.org/packages/net-p2p/rtorrent).
  * [Mandriva Linux](https://en.wikipedia.org/wiki/Mandriva_Linux) : the latest packages are available from the Cooker contribs.
- * [SUSE Linux](http://suse.com/) : latest packages available from Packman for [libTorrent](http://packman.links2linux.de/package/libtorrent) and [rTorrent](http://packman.links2linux.de/package/rtorrent). 
+ * [SUSE Linux](http://suse.com/) : latest packages available from Packman for [libTorrent](http://packman.links2linux.de/package/libtorrent) and [rTorrent](http://packman.links2linux.de/package/rtorrent).
 
  * [ArchLinux](https://www.archlinux.org/) : The latest packages are available by installing with `pacman -S rtorrent`
  * [Crux](https://crux.nu/) : in the [Crux Ports DB](https://crux.nu/portdb/?command=viewport&name=libtorrent&repo=contrib); see latest version on [libTorrent](https://crux.nu/gitweb/?p=ports/contrib.git;a=tree;f=libtorrent) and [rTorrent](https://crux.nu/gitweb/?p=ports/contrib.git;a=tree;f=rtorrent).
