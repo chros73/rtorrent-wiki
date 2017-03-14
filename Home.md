@@ -8,7 +8,7 @@ The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux]
 :busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink: <br /><br /> The [[TODO]] page has a list of pending work items. See [[About this Wiki…|WikiAbout]] for more information on how you can contribute, and the structure of this wiki (i.e. where to put things).
 ---: | :---
 
-**Contents**
+**Page Contents**
 
  * [User's Manual](#users-manual)
  * [Other Information](#other-information)
