@@ -3,12 +3,10 @@
 [![Travis CI](https://api.travis-ci.org/rakshasa/rtorrent.png?branch=master)](https://travis-ci.org/rakshasa/rtorrent)
 [![Download](http://img.shields.io/badge/download-v0.9.6-0000ff.svg)](https://github.com/rakshasa/rtorrent/wiki#download-links)
 
-:busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink: The [[TODO]] page has a list of pending work items. See [[About this Wiki…|WikiAbout]] for more information on how you can contribute, and the structure of this wiki (i.e. where to put things).
----: | :---
-
-
 The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux](https://tmux.github.io/), [screen](http://www.gnu.org/software/screen/) or  [dtach](http://dtach.sourceforge.net/). Alternatively, version 0.9.7+ has a [[built-in daemon mode|Daemon_Mode]] disabling the user interface, so you can only control it via XMLRPC. It supports saving of sessions, allows the user to add/remove torrents, and much more.
 
+:busts_in_silhouette: :pencil: | This wiki is editable by any GitHub user, and thus the often-expressed wish for a complete and current manual depends on *YOU*. See [Mastering Wikis](https://guides.github.com/features/wikis/) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), it's *NOT* :rocket: science. :wink: <br /><br /> The [[TODO]] page has a list of pending work items. See [[About this Wiki…|WikiAbout]] for more information on how you can contribute, and the structure of this wiki (i.e. where to put things).
+---: | :---
 
 **Contents**
 
