@@ -6,18 +6,20 @@
 You can use the quite powerful GitHub search to find information on commands, e.g. their old vs. new syntax variants, what they actually do (i.e. “read the source”), and internal uses in predefined methods, handlers, and schedules. 
 Consider the [view.add](https://github.com/rakshasa/rtorrent/search?utf8=%E2%9C%93&q=%22view.add%22) example.
 
- * [Sending commands with XMLRPC2SCGI](https://github.com/rakshasa/rtorrent/wiki/RPC-Utility-XMLRPC2SCGI)
- * Auto-generated list of [options](https://github.com/rakshasa/rtorrent/wiki/RPC-Option-Strings) used with some commands.
+ * [[RPC Setup XMLRPC|RPC-Setup-XMLRPC]]
+ * [[Sending commands with XMLRPC2SCGI|RPC-Utility-XMLRPC2SCGI]]
+ * Auto-generated list of [[options|RPC-Option-Strings]] used with some commands.
+ * [[Migration to 0.9 command syntax|RPC-Migration-0.9]]
 
 
 ## Commands Reference
 
-Command | Short Description
+Command (Group) | Short Description
 ---: | :---
-[execute](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Execute) | Call operating system commands, possibly catching their output for use within rTorrent.
-[schedule](https://github.com/rakshasa/rtorrent/wiki/COMMAND-Scheduling) | Repeatedly execute commands, either in a given frequency, or at certain times.
-[system.*](https://github.com/rakshasa/rtorrent/wiki/COMMAND-System) | Commands related to the operating system and the XMLRPC API.
-[ui.*](https://github.com/rakshasa/rtorrent/wiki/COMMAND-UserInterface) | These commands control aspects of the ‘curses’ UI.
+[[execute|COMMAND-Execute]] | Call operating system commands, possibly catching their output for use within rTorrent.
+[[schedule|COMMAND-Scheduling]] | Repeatedly execute commands, either in a given frequency, or at certain times.
+[[system.*|COMMAND-System]] | Commands related to the operating system and the XMLRPC API.
+[[ui.*|COMMAND-UserInterface]] | These commands control aspects of the ‘curses’ UI.
 
 
 ## Variable types
