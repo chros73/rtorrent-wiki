@@ -1,6 +1,6 @@
 **TODO** clean this up, for now collect snippets
 
-There are the `if` and `branch` commands to implement conditional execution of other commands. The difference is that `if` takes an expression for the condition, while `branch` takes a command name (and evaluates it).
+There are the `if` and `branch` commands to implement conditional execution of other commands. The difference is that `if` takes argument expressions, while `branch` takes a command list and then does its own evaluation.
 
 The following example shows a method definition, using `if` with `(…)` syntax for its arguments:
 
