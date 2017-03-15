@@ -39,14 +39,6 @@ The **rTorrent** bittorrent client uses ncurses and is ideal for use with [tmux]
    * [[rTorrent 0.9 Comprehensive Command list|rTorrent-0.9-Comprehensive-Command-list-(WIP)]]
    * [[Using initial seeding|Using-initial-seeding]]
  * the [[Scripting Guide|Scripting-Guide]] allows ‘power users’ to extend rTorrent's configuration with more complex logic, and control it remotely via XMLRPC.
-   * [[COMMAND execute|COMMAND-Execute]]
-   * [[COMMAND schedule|COMMAND-Scheduling]]
-   * [[COMMAND system|COMMAND-System]]
-   * [[COMMAND ui|COMMAND-UserInterface]]
-   * [[RPC Migration 0.9|RPC-Migration-0.9]]
-   * [[RPC Option Strings|RPC-Option-Strings]]
-   * [[RPC Setup XMLRPC|RPC-Setup-XMLRPC]]
-   * [[RPC Utility XMLRPC2SCGI|RPC-Utility-XMLRPC2SCGI]]
  * the [[Vagrant|Vagrant]] repository allows easy creation of a test environment for the client.
 
 
