@@ -1,3 +1,4 @@
+**TODO** Explain variants (bg, capture, no_throw, …)
 
 ## Syntax
 
