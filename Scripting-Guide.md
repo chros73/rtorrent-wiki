@@ -16,6 +16,8 @@ Consider the [view.add](https://github.com/rakshasa/rtorrent/search?utf8=%E2%9C%
 
 Command (Group) | Short Description
 ---: | :---
+[[method.*|COMMAND-Methods] | Define new commands based on existing ones.
+[[branch & if|COMMAND-Conditional]] | Execute different commands depending on conditions.
 [[execute|COMMAND-Execute]] | Call operating system commands, possibly catching their output for use within rTorrent.
 [[schedule|COMMAND-Scheduling]] | Repeatedly execute commands, either in a given frequency, or at certain times.
 [[system.*|COMMAND-System]] | Commands related to the operating system and the XMLRPC API.
