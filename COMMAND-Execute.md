@@ -1,4 +1,4 @@
-**TODO** Explain variants (bg, capture, no_throw, …)
+**TODO** Explain `.bg` variants, alternate syntax with `(execute, …)`
 
 ## Syntax
 
