@@ -41,10 +41,10 @@ Then (re-)start rTorrent.
 #############################################################################
 
 # Instance layout (base paths)
-method.insert = cfg.basedir,    private|const|string, (cat,"/home/USERNAME/rtorrent/")
-method.insert = cfg.watch,      private|const|string, (cat,(cfg.basedir),"watch/")
-method.insert = cfg.logs,       private|const|string, (cat,(cfg.basedir),"log/")
-method.insert = cfg.logfile,    private|const|string, (cat,(cfg.logs),"rtorrent-",(system.time),".log")
+method.insert = cfg.basedir, private|const|string, (cat,"/home/USERNAME/rtorrent/")
+method.insert = cfg.watch,   private|const|string, (cat,(cfg.basedir),"watch/")
+method.insert = cfg.logs,    private|const|string, (cat,(cfg.basedir),"log/")
+method.insert = cfg.logfile, private|const|string, (cat,(cfg.logs),"rtorrent-",(system.time),".log")
 
 # Create instance directories
 execute.throw = bash, -c, (cat,\
@@ -79,17 +79,17 @@ pieces.memory.max.set = 1800M
 network.xmlrpc.size_limit.set = 2M
 
 # Basic operational settings (no need to change these)
-session.path.set = (cat,(cfg.basedir),".session")
-directory.default.set = (cat,(cfg.basedir),"download")
+session.path.set = (cat, (cfg.basedir), ".session")
+directory.default.set = (cat, (cfg.basedir), "download")
 
 # Watch directories (add more as you like, but use unique schedule names)
-schedule = watch_start,10,10,((load.start,(cat,(cfg.watch),"start/*.torrent")))
-schedule = watch_load,15,10,((load.normal,(cat,(cfg.watch),"load/*.torrent")))
+schedule2 = watch_start, 10, 10, ((load.start, (cat, (cfg.watch), "start/*.torrent")))
+schedule2 = watch_load, 11, 10, ((load.normal, (cat, (cfg.watch), "load/*.torrent")))
 
 # Logging:
 #   Levels = critical error warn notice info debug
 #   Groups = connection_* dht_* peer_* rpc_* storage_* thread_* tracker_* torrent_*
-print = (cat,"Logging to ",(cfg.logfile))
+print = (cat, "Logging to ", (cfg.logfile))
 log.open_file = "log", (cfg.logfile)
 log.add_output = "info", "log"
 #log.add_output = "tracker_debug", "log"
