@@ -16,21 +16,15 @@ use-cases in the appropriate sections of the wiki, like the
 
 ## Using the Template
 
-To create the directory tree this configuration expects, use these commands:
-
-```sh
-basedir="$HOME/rtorrent"
-mkdir -p "$basedir"/{.session,download,log,watch/load,watch/start}
-```
-
-The `basedir` value has to be the same you set in `cfg.basedir` below.
-
 Use this command to get a copy of the template to your disk:
 
 ```sh
-curl -Ls https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template.md \
-    | grep -A9999 '^######' | grep -B9999 '^### END' >~/.rtorrent.rc
+curl -Ls "https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template.md" \
+    | grep -A9999 '^######' | grep -B9999 '^### END' \
+    | sed -re "s:/home/USERNAME:$HOME:" >~/.rtorrent.rc
 ```
+
+Then (re-)start rTorrent.
 
 ## The Template
 
@@ -51,6 +45,10 @@ method.insert = cfg.basedir,    private|const|string, (cat,"/home/USERNAME/rtorr
 method.insert = cfg.watch,      private|const|string, (cat,(cfg.basedir),"watch/")
 method.insert = cfg.logs,       private|const|string, (cat,(cfg.basedir),"log/")
 method.insert = cfg.logfile,    private|const|string, (cat,(cfg.logs),"rtorrent-",(system.time),".log")
+
+# Create instance directories
+execute.throw = bash, -c, (cat,\
+    "mkdir -p \"", (cfg.basedir), "\"{.session,download,log,watch/load,watch/start}")
 
 # Listening port for incoming peer traffic (fixed; you can also randomize it)
 network.port_range.set = 50000-50000
