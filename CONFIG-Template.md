@@ -31,7 +31,7 @@ Then (re-)start rTorrent.
 
 ## The Template
 
-Also see [Load ‘Drop-In’ Config Fragments](http://rtorrent-docs.readthedocs.io/en/latest/cookbook.html#drop-in-config)
+Also see [Load ‘Drop-In’ Config Fragments](http://rtorrent-docs.readthedocs.io/en/latest/use-cases.html#drop-in-config)
 on how to extend this so you can load extensions to this template
 from files in a ``config.d`` directory.
 
