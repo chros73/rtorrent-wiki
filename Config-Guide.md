@@ -15,18 +15,16 @@ See [rTorrent Configuration Template](https://github.com/rakshasa/rtorrent/wiki/
 
 Adding the `session.path.set` command will enable session management, which means the torrent files and status information for all open downloads will be stored in this directory. When restarting rTorrent all torrents previously loaded will be restored. Only one instance of rTorrent should be used with each session directory, though at the moment no locking is done. An empty string will disable the session handling.
 
+:white_check_mark: This is already contained in [[CONFIG-Template]].
+
 
 ### Watching a Directory for Torrents
 
 The client may be configured to check a directory for new torrents and load them. Torrents loaded in this manner will be *tied* to the file's path. This means when the torrent file is deleted the torrent may be stopped (requires additional configuration), and when the item is removed the torrent file is, too. Note that you can untie an item by using the `U` key (which will delete the tied file), and using `^K` also implictly unties an item.
 
-```ini
-# Watch directories (add more as you like, but use unique schedule names)
-schedule = watch_start,10,10,((load.start,"./watch/start/*.torrent"))
-schedule = watch_load,15,10,((load.normal,"./watch/load/*.torrent"))
-```
-
 See also the [Watch Directories](https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories) page.
+
+:white_check_mark: This is already contained in [[CONFIG-Template]].
 
 
 ## Advanced Use-Cases
