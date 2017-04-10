@@ -19,7 +19,7 @@ use-cases in the appropriate sections of the wiki, like the
 
 ## Using the Template
 
-Use this command to get a copy of the template to your disk and create the directory for your instance:
+Use these commands to get a copy of the template to your disk and create the directory for your instance:
 
 ```sh
 curl -Ls "https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template.md" \
