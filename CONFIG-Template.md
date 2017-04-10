@@ -19,12 +19,13 @@ use-cases in the appropriate sections of the wiki, like the
 
 ## Using the Template
 
-Use this command to get a copy of the template to your disk:
+Use this command to get a copy of the template to your disk and create the directory for your instance:
 
 ```sh
 curl -Ls "https://raw.githubusercontent.com/wiki/rakshasa/rtorrent/CONFIG-Template.md" \
     | grep -A9999 '^######' | grep -B9999 '^### END' \
     | sed -re "s:/home/USERNAME:$HOME:" >~/.rtorrent.rc
+mkdir ~/rtorrent
 ```
 
 Then (re-)start rTorrent.
