@@ -213,7 +213,7 @@ Switch to a custom view with
 Start or stop all torrents
 ------------
 
-On the "main" view ``^x`` + ``d.multicall=,d.start=``.
+On the "main" view ``^x`` + ``d.multicall2=,d.start=``.
 
 Replace ``d.start=`` with ``d.stop=`` to stop all torrents .
 
