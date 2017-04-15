@@ -270,7 +270,7 @@ In addition to the above, it's strongly advised to use DNS caching either locall
 
 ## References
 
-- [libtorrent manual](http://www.libtorrent.org/tuning.html)
+- [libtorrent manual](http://www.libtorrent.org/tuning.html) (NB: This is not the rakshasa libtorrent, but still contains useful information)
 - [lost rTorrent docs](http://web.archive.org/web/20131104130853/http://libtorrent.rakshasa.no/wiki/RTorrentPerformanceTuning)
 - [rTorrent research](https://calomel.org/rtorrent_mods.html)
 - [c-ares](http://c-ares.haxx.se)
