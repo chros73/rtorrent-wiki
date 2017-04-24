@@ -128,7 +128,7 @@ Access the XMLRPC interface using any XMLRPC-capable client. For example, using 
  > xmlrpc localhost d.set_directory 91A2DF0C9288BC4C5D03EC8D8C26B4CF95A4DBEF foo/bar/
 
  > # Size of the first file in a specific download.
- > xmlrpc localhost f.get_size_bytes 91A2DF0C9288BC4C5D03EC8D8C26B4CF95A4DBEF i/0
+ > xmlrpc localhost f.get_size_bytes 91A2DF0C9288BC4C5D03EC8D8C26B4CF95A4DBEF:f0
 ```
 
 It supports both single strings akin to what the option file accepts, and proper xmlrpc integer, string and lists.
@@ -140,8 +140,6 @@ See the man page and the rtorrent/src/command_* source files for more details on
 Note that all commands now require a target, even if it is an empty string.
 
 ```
- > xmlrpc localhost f.get_size_bytes 91A2DF0C9288BC4C5D03EC8D8C26B4CF95A4DBEF i/3
- > xmlrpc localhost f.get_size_bytes 91A2DF0C9288BC4C5D03EC8D8C26B4CF95A4DBEF "3"
  > xmlrpc localhost f.get_size_bytes 91A2DF0C9288BC4C5D03EC8D8C26B4CF95A4DBEF:f3
  > xmlrpc localhost p.get_url        91A2DF0C9288BC4C5D03EC8D8C26B4CF95A4DBEF:p0
 ```
