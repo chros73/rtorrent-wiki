@@ -85,8 +85,8 @@ pieces.memory.max.set = 1800M
 network.xmlrpc.size_limit.set = 2M
 
 # Basic operational settings (no need to change these)
-session.path.set = (cat, (cfg.basedir), ".session")
-directory.default.set = (cat, (cfg.basedir), "download")
+session.path.set = (cat, (cfg.basedir), ".session/")
+directory.default.set = (cat, (cfg.basedir), "download/")
 
 # Watch directories (add more as you like, but use unique schedule names)
 schedule2 = watch_start, 10, 10, ((load.start, (cat, (cfg.watch), "start/*.torrent")))
