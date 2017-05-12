@@ -291,6 +291,7 @@ Many variables can also be used as commands, however commands are not intended t
 | `d.base_path` | `d.get_base_path` | | Variable |
 | `d.bitfield` | `d.get_bitfield` | | Variable |
 | `d.bytes_done` | `d.get_bytes_done` | | Variable |
+| `d.check_hash` |  | Forces rehash | Command |
 | `d.chunk_size` | `d.get_chunk_size` | | Variable |
 | `d.chunks_hashed` | `d.get_chunks_hashed` | | Variable |
 | `d.complete` | `d.get_complete` | | Variable |
